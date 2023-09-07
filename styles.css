@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: 'Inconsolata', monospace;
+  font-family: 'Mulish', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,11 +13,17 @@ body {
   padding: 20px;
 }
 
+h1 {
+  font-family: 'Dawning of a New Day', cursive;
+  font-weight: 400;
+  font-size: 100px;
+}
+
 .wrapper {
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 80px;
 }
 
 #contador {
@@ -27,7 +33,7 @@ body {
 }
 
 #contador::before {
-  content: 'Faltan...';
+  content: 'Nos casamos en...';
   position: absolute;
   font-size: 18px;
   font-weight: 300;
