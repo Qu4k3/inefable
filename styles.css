@@ -1,0 +1,37 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inconsolata', monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+.wrapper {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+#contador {
+  font-size: 60px;
+  font-weight: 200;
+  position: relative;
+}
+
+#contador::before {
+  content: 'Faltan...';
+  position: absolute;
+  font-size: 18px;
+  font-weight: 300;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -20px;
+}
