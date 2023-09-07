@@ -11,10 +11,15 @@ body {
   align-items: center;
   height: 100vh;
   padding: 20px;
+  background-image: url(./euc-aqua.png);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 h1 {
   font-family: 'Dawning of a New Day', cursive;
+  margin-top: -80px;
   font-weight: 400;
   font-size: 100px;
 }
@@ -26,18 +31,27 @@ h1 {
   gap: 80px;
 }
 
+.bottom {
+  font-family: 'Dawning of a New Day', cursive;
+  font-weight: 400;
+  font-size: 16px;
+  margin-top: auto;
+}
+
 #contador {
-  font-size: 60px;
+  font-size: 28px;
   font-weight: 200;
   position: relative;
 }
 
 #contador::before {
   content: 'Nos casamos en...';
+  opacity: .8;
+  white-space: nowrap;
   position: absolute;
   font-size: 18px;
   font-weight: 300;
   left: 50%;
   transform: translateX(-50%);
-  top: -20px;
+  top: -30px;
 }
