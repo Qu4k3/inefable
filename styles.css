@@ -35,6 +35,10 @@ h1 {
   font-weight: 200;
   font-size: 20px;
   margin-top: auto;
+
+  & small {
+    font-size: 14px;
+  }
 }
 
 #contador {
