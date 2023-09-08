@@ -48,7 +48,7 @@ h1 {
   opacity: .8;
   white-space: nowrap;
   position: absolute;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 300;
   left: 50%;
   transform: translateX(-50%);
