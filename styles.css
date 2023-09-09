@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: 'Mulish', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,7 +43,7 @@ h1 {
 
 #countdown {
   font-size: 28px;
-  font-weight: 200;
+  font-weight: 300;
   position: relative;
 }
 
@@ -53,7 +53,7 @@ h1 {
   white-space: nowrap;
   position: absolute;
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 200;
   left: 50%;
   transform: translateX(-50%);
   top: -30px;
