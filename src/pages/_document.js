@@ -18,7 +18,7 @@ export default function Document() {
         <meta property="og:image:width" content="256" />
         <meta property="og:image:height" content="256" />
 
-        <link rel="manifest" href="/manifest.json" />
+        <link rel="manifest" href="/manifest.webmanifest" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
