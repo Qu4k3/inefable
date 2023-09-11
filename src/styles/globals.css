@@ -46,13 +46,13 @@ h1 {
   font-size: 14px;
 }
 
-.countdown {
+#countdown {
   font-size: 28px;
   font-weight: 300;
   position: relative;
 }
 
-.countdown::before {
+#countdown::before {
   content: 'Nos casamos en...';
   opacity: .8;
   white-space: nowrap;

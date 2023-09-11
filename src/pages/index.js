@@ -1,7 +1,13 @@
-import Countdown from '@/components/Countdown'
+import countdown from '../scripts/countdown'
 import Head from 'next/head'
+import { useEffect } from 'react';
 
 export default function Home() {
+
+  useEffect(() => {
+    countdown(); // Call the countdown function when the component mounts
+  }, []);
+
   return (
     <>
       <Head>        
@@ -29,7 +35,7 @@ export default function Home() {
         <div class="wrapper">
           <h1>inefable</h1>
 
-          <Countdown />
+          <div id="countdown"></div>
 
           <div class="bottom">
             <p>Isa & Paul</p>
