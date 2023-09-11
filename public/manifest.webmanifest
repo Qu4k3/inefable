@@ -1,12 +1,11 @@
 {
     "theme_color": "#000000",
     "background_color": "#ffffff",
-    "display": "fullscreen",
+    "display": "standalone ",
     "scope": "https://inefable.day/",
     "start_url": "https://inefable.day/",
     "name": "Inefable Day \u00b7 Boda de Isa & Paul \u00b7 02.11.24",
     "short_name": "inefable",
-    "description": "Inefable Day \u00b7 Boda de Isa & Paul \u00b7 02.11.24",
     "icons": [
         {
             "src": "/icon-192x192.png",
