@@ -1,0 +1,1 @@
+export const openGraphImage = { images: ['https://inefable.day/thumbnail.png'] }
