@@ -63,3 +63,115 @@ h1 {
   transform: translateX(-50%);
   top: -30px;
 }
+
+.invitation {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 500px;
+
+  h2 {
+    font-size: 32px;
+    font-weight: 300;
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: 200;
+  }
+
+  h4 {
+    font-size: 16px;
+    font-weight: 200;
+  }
+
+  hr {
+    width: 150px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    margin: 0 auto;
+    border-bottom-width: 0;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      border-radius: 30px;
+      background-color: #fff;
+      text-align: left;
+      position: relative;
+      padding: 12px 10px 12px 50px;
+
+      &:before{
+        content: "";
+        position: absolute;
+        left: 20px;
+        top: 14px;
+        display: inline-block;
+        background-image: url('../../public/sprite-checks.svg');
+        background-repeat: no-repeat;
+        background-size: 140px;
+        /*background-position: 0 0;*/
+        background-position: -123px 0;
+        margin-right: 10px;
+        padding: 0;
+        width: 20px;
+        height: 20px;
+        border: none;
+        cursor: pointer;
+        vertical-align: middle;
+      }
+
+      small {
+        position: absolute;
+        right: 10px;
+        user-select: none;
+        background-color: #E7AD99;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 30px;
+        font-weight: 300;
+        /*letter-spacing: 1px;*/
+
+        &.no-assistant {
+          background-color: rgba(0, 0, 0, 0.3);
+        }
+      }
+    }
+
+    button {
+      flex: 0 1 auto;
+      align-self: center;
+      margin-top: 20px;
+      padding: 10px 25px;
+      background-color: #F2F2F2;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: 300;
+      cursor: pointer;
+      transition: .3s;
+
+      &:hover {
+        background-color: #e8e8e8;
+      }
+    }
+  }
+  
+
+  small {
+    font-weight: 200;
+    
+    u {
+      text-decoration-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+}
