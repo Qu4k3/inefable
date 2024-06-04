@@ -1,4 +1,5 @@
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Mulish } from "next/font/google";
 import { openGraphImage } from './shared-metadata'
 import '@/styles/globals.css'
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
       <body className={mulish.className}>
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
