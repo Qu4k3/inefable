@@ -16,7 +16,7 @@ export default function Home() {
         <div id="countdown"></div>
 
         <div class="bottom">
-          <p>Isa & Paul</p>
+          <p>I & P</p>
           <small>02.11.24</small>
         </div>
       </div>

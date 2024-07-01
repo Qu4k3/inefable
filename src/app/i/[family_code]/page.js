@@ -1,19 +1,15 @@
 import { GuestForm } from "@/components/GuestsForm";
-import { sql } from "@vercel/postgres";
+import { getGuestsByFamily } from "@/helpers/queries";
 
 export default async function Guest({ params }) {
-  const { rows } = await sql`SELECT * FROM GUEST WHERE family_code=${params.family_code}`;
-
-  const onSubmit = (data) => {
-    alert(JSON.stringify(data))
-  }
+  const { rows } = await getGuestsByFamily(params.family_code);
 
   return (
     <main className="invitation">
       {
         rows.length == 0
           ? <>
-            <h2>No hay resultados</h2>
+            <h2>¡No hemos encontrado tu invitación!</h2>
             <h3>Revisa el código de 3 dígitos de la invitación.</h3>
             <h4>Si crees que se debe de un error, ¡contáctanos por Whatsapp!</h4>
           </>

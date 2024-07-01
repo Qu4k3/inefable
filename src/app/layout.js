@@ -1,15 +1,8 @@
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import { Mulish } from "next/font/google";
 import { openGraphImage } from './shared-metadata'
+import { halimun, lora } from './fonts';
 import '@/styles/globals.css'
-
-const mulish = Mulish({
-  weight: ['200', '300'],
-  style: 'normal',
-  subsets: ['latin'],
-  display: 'swap',
-});
 
 export const metadata = {
   title: "Inefable Day · Boda de Isa & Paul · 02.11.24",
@@ -27,7 +20,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <body className={mulish.className}>
+      <body className={`${lora.variable} ${halimun.variable}`}>
         {children}
         <Analytics />
         <SpeedInsights />

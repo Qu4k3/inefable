@@ -1,6 +1,10 @@
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
+  --color-active-elements-rgb: 225, 196, 193;
+  --color-active-background-rgb: 208, 163, 159;
+  --color-main-default-rgb: 40, 35, 37;
+  --color-gray-rgb: 125, 122, 122;
 }
 
 * {
@@ -10,23 +14,38 @@
 }
 
 body {
-  font-family: 'Mulish', sans-serif;
+  font-family: var(--font-lora);
+  color: rgb(var(--color-main-default-rgb));
+  font-weight: 200;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   padding: 0 20px;
-  background-image: url(../../public/euc-aqua.png);
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  position: relative;
+
+  /*&::before {
+    content: '';
+    position: absolute;
+    background-image: url(../../public/euc-aqua.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .25;
+  }*/
 }
 
 h1 {
-  font-family: 'Dawning of a New Day', cursive;
+  font-family: var(--font-halimun);
   margin-top: -60px;
   font-weight: 400;
-  font-size: 100px;
+  font-size: 56px;
+  opacity: .8;
 }
 
 .wrapper {
@@ -65,6 +84,21 @@ h1 {
 }
 
 .invitation {
+  &::before {
+    content: '';
+    position: absolute;
+    background-image: url(../../public/flower-1.png);
+    background-attachment: fixed;
+    background-position: 75% 15%;
+    background-repeat: no-repeat;
+    background-size: 600px auto;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .2;
+  }
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -88,7 +122,7 @@ h1 {
 
   hr {
     width: 150px;
-    border: 1px solid rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(var(--color-main-default-rgb), 0.15);
     margin: 0 auto;
     border-bottom-width: 0;
   }
@@ -98,80 +132,135 @@ h1 {
     flex-direction: column;
     gap: 15px;
 
-    div {
+    label {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 10px;
-      border: 1px solid rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(var(--color-main-default-rgb), 0.15);
       border-radius: 30px;
       background-color: #fff;
       text-align: left;
       position: relative;
-      padding: 12px 10px 12px 50px;
+      padding: 12px 100px 12px 20px;
+      cursor: pointer;
+      user-select: none;
 
-      &:before{
-        content: "";
-        position: absolute;
-        left: 20px;
-        top: 14px;
-        display: inline-block;
-        background-image: url('../../public/sprite-checks.svg');
-        background-repeat: no-repeat;
-        background-size: 140px;
-        /*background-position: 0 0;*/
-        background-position: -123px 0;
-        margin-right: 10px;
-        padding: 0;
-        width: 20px;
-        height: 20px;
-        border: none;
-        cursor: pointer;
-        vertical-align: middle;
+      div {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+
+        input {
+          position: relative;
+          width: 1.2em;
+          height: 1.2em;
+          background-color: #fff;
+          border-radius: 50%;
+          vertical-align: middle;
+          border: 1px solid #ddd;
+          appearance: none;
+          -webkit-appearance: none;
+          outline: none;
+          cursor: pointer;
+
+          &:before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            height: 5px;
+            width: 5px;
+            background-color: #fff;
+            border-radius: 25px;
+          }
+        }
+
+        input:checked {
+          background-color: rgb(var(--color-active-elements-rgb));
+          border-color: rgb(var(--color-active-elements-rgb));
+        }
+
+        /*&:before{
+          content: "";
+          position: absolute;
+          left: 20px;
+          top: 14px;
+          display: inline-block;
+          background-image: url('../../public/sprite-checks.svg');
+          background-repeat: no-repeat;
+          background-size: 140px;
+          /*background-position: 0 0;*/
+        /*background-position: -123px 0;
+          margin-right: 10px;
+          padding: 0;
+          width: 20px;
+          height: 20px;
+          border: none;
+          cursor: pointer;
+          vertical-align: middle;
+        }*/
       }
 
-      small {
+      /*&.edited {
+        background-color: #fbf6f6;
+      }*/
+
+      small{
         position: absolute;
         right: 10px;
         user-select: none;
-        background-color: #E7AD99;
+        background-color: rgb(var(--color-active-background-rgb));
         color: #fff;
         padding: 5px 10px;
         border-radius: 30px;
         font-weight: 300;
         /*letter-spacing: 1px;*/
+        cursor: default;
 
         &.no-assistant {
-          background-color: rgba(0, 0, 0, 0.3);
+          background-color: rgba(var(--color-main-default-rgb), 0.3);
         }
+
+        /*&.edited {
+          display: none;
+        }*/
       }
     }
 
     button {
+      font-family: inherit;
       flex: 0 1 auto;
       align-self: center;
       margin-top: 20px;
       padding: 10px 25px;
-      background-color: #F2F2F2;
+      background-color: #fbf6f6; /*rgba(var(--color-active-elements-rgb), .15);*/
+      color: var(rgb(--color-main-default-rgb));
       border: none;
       border-radius: 30px;
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 300;
       cursor: pointer;
       transition: .3s;
 
-      &:hover {
-        background-color: #e8e8e8;
+      &:disabled {
+        cursor: not-allowed;
+        /*opacity: .6;*/
+      }
+
+      &:not([disabled]):hover {
+        background-color: #f6edec; /*rgba(var(--color-active-elements-rgb), .3);*/
       }
     }
   }
-  
+
 
   small {
-    font-weight: 200;
-    
+    font-size: 14px;
+
     u {
-      text-decoration-color: rgba(0, 0, 0, 0.5);
+      text-decoration-color: rgba(var(--color-main-default-rgb), 0.5);
     }
   }
 }
