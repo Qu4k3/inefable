@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form"
 import { useState } from 'react';
 import { Button } from '@mantine/core';
 
-export function GuestForm({ rows, formSubmitted }) {
+export function GuestForm({ rows }) {
   const router = useRouter();
 
   const [localState, setLocalState] = useState(rows);
@@ -46,8 +46,8 @@ export function GuestForm({ rows, formSubmitted }) {
   const onSubmit = async (data) => {
     updateGuestsForm(data)
     setWiggle(false)
-    router.refresh()
-    //router.push('?confirmed=true', { scroll: false });
+    // router.refresh()
+    router.push('?redirect=confirmed', { scroll: false });
   }
 
   return (
