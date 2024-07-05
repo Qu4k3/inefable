@@ -1,8 +1,10 @@
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
-  --color-active-elements-rgb: 225, 196, 193;
-  --color-active-background-rgb: 208, 163, 159;
+  /*--color-active-elements-rgb: 225, 196, 193;
+  --color-active-background-rgb: 208, 163, 159;*/
+  --color-active-elements-rgb: 232, 188, 205;
+  --color-active-background-rgb: 225, 169, 191;
   --color-main-default-rgb: 40, 35, 37;
   --color-gray-rgb: 125, 122, 122;
 }
@@ -20,8 +22,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  padding: 0 20px;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 20px;
   position: relative;
 
   /*&::before {
@@ -84,6 +87,12 @@ h1 {
 }
 
 .invitation {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-width: 500px;
+
   &::before {
     content: '';
     position: absolute;
@@ -99,11 +108,6 @@ h1 {
     bottom: 0;
     opacity: .2;
   }
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  max-width: 500px;
 
   h2 {
     font-size: 32px;
@@ -134,6 +138,7 @@ h1 {
 
     label {
       display: flex;
+      line-height: normal;
       justify-content: space-between;
       align-items: center;
       padding: 10px;
@@ -142,7 +147,7 @@ h1 {
       background-color: #fff;
       text-align: left;
       position: relative;
-      padding: 12px 100px 12px 20px;
+      padding: 12px 125px 12px 20px;
       cursor: pointer;
       user-select: none;
 
@@ -150,6 +155,7 @@ h1 {
         display: flex;
         gap: 10px;
         align-items: center;
+        max-width: 100%;
 
         input {
           position: relative;
@@ -201,6 +207,11 @@ h1 {
           cursor: pointer;
           vertical-align: middle;
         }*/
+
+        span {
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
       }
 
       /*&.edited {
@@ -235,7 +246,7 @@ h1 {
       align-self: center;
       margin-top: 20px;
       padding: 10px 25px;
-      background-color: #fbf6f6; /*rgba(var(--color-active-elements-rgb), .15);*/
+      background-color: #faf2f5;
       color: var(rgb(--color-main-default-rgb));
       border: none;
       border-radius: 30px;
@@ -250,7 +261,7 @@ h1 {
       }
 
       &:not([disabled]):hover {
-        background-color: #f6edec; /*rgba(var(--color-active-elements-rgb), .3);*/
+        background-color: #f5e3ea;
       }
     }
   }
@@ -263,4 +274,24 @@ h1 {
       text-decoration-color: rgba(var(--color-main-default-rgb), 0.5);
     }
   }
+}
+
+.wiggle {
+  /*animation: wiggle 0.5s;*/
+  animation: wiggle-infinite 5s infinite;
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+}
+
+@keyframes wiggle-infinite {
+  0%, 100% { transform: translateX(0); }
+  4% { transform: translateX(-5px); }
+  8% { transform: translateX(5px); }
+  12% { transform: translateX(-5px); }
+  16% { transform: translateX(0); }
 }
