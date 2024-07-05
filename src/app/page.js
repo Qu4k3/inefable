@@ -10,12 +10,12 @@ export default function Home() {
 
   return (
     <main>
-      <div class="wrapper">
+      <div className="wrapper">
         <h1>inefable</h1>
 
         <div id="countdown"></div>
 
-        <div class="bottom">
+        <div className="bottom">
           <p>I & P</p>
           <small>02.11.24</small>
         </div>
