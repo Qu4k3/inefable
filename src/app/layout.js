@@ -1,7 +1,10 @@
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { ViewTransitions } from 'next-view-transitions'
 import { openGraphImage } from './shared-metadata'
 import { halimun, lora } from './fonts';
+import '@mantine/core/styles.css';
+import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import '@/styles/globals.css'
 
 export const metadata = {
@@ -19,12 +22,19 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es">
-      <body className={`${lora.variable} ${halimun.variable}`}>
-        {children}
-        <Analytics />
-        <SpeedInsights />
-      </body>
-    </html>
+    <ViewTransitions>
+      <html lang="es">
+        <head>
+          <ColorSchemeScript />
+        </head>
+        <body className={`${lora.variable} ${halimun.variable}`}>
+          <MantineProvider>
+            {children}
+          </MantineProvider>
+          <Analytics />
+          <SpeedInsights />
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }
