@@ -43,11 +43,44 @@ body {
   }*/
 }
 
+.home {
+  &::before {
+    content: '';
+    position: absolute;
+    background-image: url(../../public/flower-1.png);
+    background-attachment: fixed;
+    background-position: 100% 0%;
+    background-repeat: no-repeat;
+    background-size: 300px auto;
+    z-index: -2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .2;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    background-image: url(../../public/flower-1.png);
+    background-attachment: fixed;
+    background-position: 100% 0%;
+    background-repeat: no-repeat;
+    background-size: 300px auto;
+    z-index: -2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .2;
+    rotate: 180deg;
+  }
+}
+
 h1 {
   font-family: var(--font-halimun);
-  margin-top: -60px;
   font-weight: 400;
-  font-size: 56px;
+  font-size: 48px;
   opacity: .8;
 }
 
@@ -55,7 +88,7 @@ h1 {
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  gap: 40px;
 }
 
 .bottom {
@@ -68,23 +101,31 @@ h1 {
   font-size: 14px;
 }
 
-#countdown {
-  font-size: 28px;
-  font-weight: 300;
-  position: relative;
+.countdown-inline {
+  display: inline-block;
 }
 
-#countdown::before {
-  content: 'Nos casamos en...';
-  opacity: .8;
-  white-space: nowrap;
-  position: absolute;
-  font-size: 16px;
-  font-weight: 200;
-  left: 50%;
-  transform: translateX(-50%);
-  top: -30px;
+.countdown {
+  font-size: 28px;
+  margin-top: 40px;
+  font-weight: 300;
+  position: relative;
+
+  &::after {
+    content: 'Nos casamos en...';
+    opacity: .8;
+    white-space: nowrap;
+    position: absolute;
+    font-size: 16px;
+    font-weight: 200;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -30px;
+  }
+  
 }
+
+
 
 .invitation {
   text-align: center;
