@@ -3,13 +3,16 @@ import { useRouter } from 'next/navigation';
 import { updateGuestsForm } from "@/app/actions"
 import { useForm } from "react-hook-form"
 import { useState } from 'react';
-import { Button } from '@mantine/core';
+import { Alert, Button } from '@mantine/core';
+import { IconAlertCircle } from '@tabler/icons-react';
 
 export function GuestForm({ rows }) {
   const router = useRouter();
 
   const [localState, setLocalState] = useState(rows);
   const [wiggle, setWiggle] = useState(false);
+  const [isErrorSubmit, setIsErrorSubmit] = useState(false);
+  const [isSubmit, setIsSubmit] = useState(false);
 
   const {
     register,
@@ -44,14 +47,34 @@ export function GuestForm({ rows }) {
   }, [localState])*/
 
   const onSubmit = async (data) => {
-    updateGuestsForm(data)
-    setWiggle(false)
-    // router.refresh()
-    router.push('?redirect=confirmed', { scroll: false });
+    try {
+      setIsSubmit(true)
+      setWiggle(false)
+      await updateGuestsForm(data);
+      // router.refresh()
+      router.push('?redirect=confirmed', { scroll: false });
+    } catch (error) {
+      console.log('Error submit', error)
+      setIsErrorSubmit(true)
+      setIsSubmit(false)
+    }
   }
 
   return (
     <>
+      {isErrorSubmit && <Alert
+        variant="light"
+        color="red"
+        radius="md"
+        title="No hemos podido actualizar tus datos"
+        icon={<IconAlertCircle />}
+        styles={{
+          title: { justifyContent: 'center' },
+        }}
+      >
+        Comprueba tu conexión a internet y vuelve a intentarlo
+      </Alert>
+      }
       <form onSubmit={handleSubmit(onSubmit)}>
         {rows
           .sort((a, b) => a.id - b.id)
@@ -102,8 +125,10 @@ export function GuestForm({ rows }) {
           type='submit'
           classNames={{
             root: wiggle ? 'wiggle' : ''
-          }}        >
-          Confirmar
+          }}
+          disabled={isSubmit}
+          >
+          {isSubmit ? 'Confirmando...' : 'Confirmar'}
         </Button>
       </form>
     </>
