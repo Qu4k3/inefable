@@ -21,8 +21,12 @@ export default function Home() {
           styles={{
             icon: { width: '40px', height: '40px' },
           }}
-          >
-          ¡Vuelve en <Countdown className="countdown-inline" finalDate="2024-07-19" />!
+        >
+          ¡Vuelve en <Countdown
+            className="countdown-inline"
+            finalDate="2024-07-20T00:00:00"
+            finalText="breves..."
+          />!
         </Notification>
         <h1>inefable</h1>
 
