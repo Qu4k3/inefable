@@ -12,6 +12,7 @@ export function GuestForm({ rows }) {
   const [localState, setLocalState] = useState(rows);
   const [wiggle, setWiggle] = useState(false);
   const [isErrorSubmit, setIsErrorSubmit] = useState(false);
+  const [isSubmit, setIsSubmit] = useState(false);
 
   const {
     register,
@@ -47,13 +48,15 @@ export function GuestForm({ rows }) {
 
   const onSubmit = async (data) => {
     try {
-      await updateGuestsForm(data);
+      setIsSubmit(true)
       setWiggle(false)
+      await updateGuestsForm(data);
       // router.refresh()
       router.push('?redirect=confirmed', { scroll: false });
     } catch (error) {
       console.log('Error submit', error)
-      setIsErrorSubmit(false)
+      setIsErrorSubmit(true)
+      setIsSubmit(false)
     }
   }
 
@@ -122,8 +125,10 @@ export function GuestForm({ rows }) {
           type='submit'
           classNames={{
             root: wiggle ? 'wiggle' : ''
-          }}        >
-          Confirmar
+          }}
+          disabled={isSubmit}
+          >
+          {isSubmit ? 'Confirmando...' : 'Confirmar'}
         </Button>
       </form>
     </>
