@@ -1,5 +1,9 @@
 'use client'
 import Countdown from "@/components/Countdown";
+import DressCode from "@/components/DressCode";
+import FAQ from "@/components/faq";
+import Inefable from "@/components/Inefable";
+import Schedule from "@/components/Timeline";
 import { Notification } from "@mantine/core";
 import { IconHourglassLow } from "@tabler/icons-react";
 
@@ -32,7 +36,12 @@ export default function Home() {
           <p>I & P</p>
           <small>02.11.24</small>
         </div>
+
       </div>
+      <Inefable />
+      <DressCode />
+      <Schedule />
+      <FAQ />
     </main>
   );
 }

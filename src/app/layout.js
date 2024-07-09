@@ -28,7 +28,12 @@ export default function RootLayout({ children }) {
           <ColorSchemeScript />
         </head>
         <body className={`${lora.variable} ${halimun.variable}`}>
-          <MantineProvider>
+          <MantineProvider
+            theme={{
+              fontFamily: `${lora.style.fontFamily}`,
+              headings: { fontFamily: `${halimun.style.fontFamily}` },
+            }}
+          >
             {children}
           </MantineProvider>
           <Analytics />

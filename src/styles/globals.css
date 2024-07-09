@@ -7,6 +7,8 @@
   --color-active-background-rgb: 225, 169, 191;
   --color-main-default-rgb: 40, 35, 37;
   --color-gray-rgb: 125, 122, 122;
+
+  --mantine-font-family-headings: var(--font-halimun);
 }
 
 * {
@@ -44,6 +46,12 @@ body {
 }
 
 .home {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  max-width: 580px;
+  margin: 40px auto;
+
   &::before {
     content: '';
     position: absolute;
@@ -89,6 +97,7 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 40px;
+  margin-bottom: 40px;
 }
 
 .bottom {

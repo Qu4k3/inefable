@@ -1,4 +1,4 @@
-import { GuestForm } from "@/components/GuestsForm";
+import { GuestForm } from "@/components/forms/GuestsForm";
 import { getGuestsByFamily } from "@/helpers/queries";
 import { Alert, Button } from "@mantine/core";
 import {
