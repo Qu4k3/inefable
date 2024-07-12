@@ -27,7 +27,7 @@ const Countdown = ({ className, finalDate, finalText = '¡La boda ha llegado!' }
     updateCountdown();
 
     return () => clearInterval(intervalId);
-  }, [finalDate]);
+  }, [finalDate, finalText]);
 
   return <div className={className}>{timeLeft}</div>;
 };

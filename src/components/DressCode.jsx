@@ -32,6 +32,7 @@ const DressCode = () => {
       <Group justify="center" align="flex-start" gap="xl" grow={true} >
         {colors.map((color) => (
           <Flex
+            key={color.hex}
             gap="md"
             justify="center"
             align="center"
