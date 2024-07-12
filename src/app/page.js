@@ -1,47 +1,30 @@
 'use client'
-import Countdown from "@/components/Countdown";
+import Album from "@/components/Album";
 import DressCode from "@/components/DressCode";
-import FAQ from "@/components/faq";
+import FAQ from "@/components/FAQ";
+import Footer from "@/components/Footer";
+import CheckForm from "@/components/forms/CheckForm";
+import Hashtag from "@/components/Hashtag";
+import Header from "@/components/Header";
 import Inefable from "@/components/Inefable";
+import Map from "@/components/Map";
+import Playlist from "@/components/Playlist";
 import Schedule from "@/components/Timeline";
-import { Notification } from "@mantine/core";
-import { IconHourglassLow } from "@tabler/icons-react";
 
 export default function Home() {
   return (
     <main className="home">
-      <div className="wrapper">
-        <Notification
-          icon={
-            <IconHourglassLow
-              style={{ width: '24px', height: '24px' }}
-            />
-          }
-          withCloseButton={false}
-          withBorder
-          color="#e1a9bf"
-          radius="md"
-          title="La web aún no está disponible"
-          styles={{
-            icon: { width: '40px', height: '40px' },
-          }}
-          >
-          ¡Vuelve en <Countdown className="countdown-inline" finalDate="2024-07-19" />!
-        </Notification>
-        <h1>inefable</h1>
-
-        <Countdown className="countdown" finalDate="2024-11-02T17:00:00" />
-
-        <div className="bottom">
-          <p>I & P</p>
-          <small>02.11.24</small>
-        </div>
-
-      </div>
+      <Header />
+      <Schedule />
+      <CheckForm />
       <Inefable />
       <DressCode />
-      <Schedule />
+      <Map />
       <FAQ />
+      <Playlist />
+      <Album />
+      <Hashtag />
+      <Footer />
     </main>
   );
 }

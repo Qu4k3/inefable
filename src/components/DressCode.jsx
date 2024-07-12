@@ -1,4 +1,19 @@
-import { Text, Container, Title, Group, ColorSwatch } from '@mantine/core';
+import { Text, Container, Title, Group, ColorSwatch, Flex } from "@mantine/core";
+
+const colors = [
+  {
+    "hex": "#FDFBF4",
+    "color": "Blanco"
+  },
+  {
+    "hex": "#FAF0E6",
+    "color": "Beige"
+  },
+  {
+    "hex": "#FFEAF0",
+    "color": "Rosa pastel"
+  }
+]
 
 const DressCode = () => {
   return (
@@ -12,14 +27,37 @@ const DressCode = () => {
         Dress Code
       </Title>
 
-      <Text ta="center">Colores prohibidos</Text>
+      <Text ta="center" mb="40px">El código de vestimenta es [formal/semi-formal/casual/elegante]. Nos encantaría que evitaras usar estos colores:</Text>
 
-      <Group justify="center" align="center">
-        <ColorSwatch color="#FDFBF4" />
-        <ColorSwatch color="#FAF0E6" />
-        <ColorSwatch color="#FFEAF0" />
+      <Group justify="center" align="flex-start" gap="xl" grow={true} >
+        {colors.map((color) => (
+          <Flex
+            gap="md"
+            justify="center"
+            align="center"
+            direction="column"
+            px="sm"
+          >
+            <ColorSwatch
+              classNames={{
+                root: "dresscode-bullet"
+              }}
+              color={color.hex}
+              size="64px"
+              mx="sm"
+            />
+            <Text
+              size="sm"
+              ta="center"
+              tw="noWrap"
+            >
+              {color.color}
+            </Text>
+          </Flex>
+        ))}
       </Group>
 
+      <Text ta="center" mt="40px">¡Gracias!</Text>
 
     </Container>
   );
