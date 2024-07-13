@@ -1,6 +1,6 @@
 'use client'
-import { Container, Flex, Title } from "@mantine/core";
-import Countdown from "./Countdown";
+import { Container, Flex } from "@mantine/core";
+import Countdown from "../elements/Countdown";
 
 const Header = () => {
   return (

@@ -1,6 +1,22 @@
 import { unstable_noStore as noStore } from 'next/cache';
 import { sql } from "@vercel/postgres";
 
+export const checkFamilyCode = async (family_code) => {
+  noStore();
+  try {
+    const result = await sql`
+      SELECT EXISTS (
+        SELECT 1
+        FROM guest
+        WHERE family_code = ${family_code}
+      );`
+    return result.rows[0].exists;
+  } catch (error) {
+    console.error('Error fetching check by family code:', error);
+    throw error;
+  }
+};
+
 export const getGuestsByFamily = async (family_code) => {
   noStore();
   try {
@@ -15,7 +31,7 @@ export const getGuestsByFamily = async (family_code) => {
   }
 };
 
-export const updateGuestById = async ({id, confirmation}) => {
+export const updateGuestById = async ({ id, confirmation }) => {
   try {
     const result = await sql`UPDATE guest SET confirmed_assistance = ${confirmation} WHERE id = ${id};`;
     return result;

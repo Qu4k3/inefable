@@ -1,40 +1,23 @@
 'use client'
 import { useRouter } from 'next/navigation';
-import { updateGuestsForm } from "@/app/actions"
+import { checkFamilyCodeExistance, updateGuestsForm } from "@/app/actions"
 import { useForm } from "react-hook-form"
 import { useState } from 'react';
-import { Alert, Button, Container, rem, TextInput, Title } from '@mantine/core';
+import { Alert, Button, Container, Flex, rem, Text, TextInput, Title } from '@mantine/core';
 import { IconAlertCircle, IconExclamationCircle } from '@tabler/icons-react';
+import { useInputState } from '@mantine/hooks';
 
 export function CheckForm({ rows }) {
   const router = useRouter();
 
-  const [localState, setLocalState] = useState(rows);
-  const [wiggle, setWiggle] = useState(false);
-  const [isErrorSubmit, setIsErrorSubmit] = useState(false);
+  const [isErrorSubmit, setIsErrorSubmit] = useState("");
   const [isSubmit, setIsSubmit] = useState(false);
 
   const {
     register,
     handleSubmit,
-    watch
+    formState: { errors }
   } = useForm()
-
-  const handleChange = (id) => {
-    const updatedRows = localState.map((row) => {
-      if (row.id === id) {
-        return { ...row, confirmed_assistance: !row.confirmed_assistance };
-      }
-      return row;
-    });
-
-    setLocalState(updatedRows)
-
-    setTimeout(() => {
-      setWiggle(true);
-      // setTimeout(() => setWiggle(false), 3000);
-    }, 2000);
-  }
 
   /*useEffect(() => {
     if (JSON.stringify(rows) !== JSON.stringify(localState)) {
@@ -46,62 +29,84 @@ export function CheckForm({ rows }) {
     }
   }, [localState])*/
 
-  const onSubmit = async (data) => {
+  const onSubmit = async ({ searchFamily }) => {
+    const family_code = searchFamily.toLowerCase();
+    setIsSubmit(true)
     try {
-      setIsSubmit(true)
-      setWiggle(false)
-      await updateGuestsForm(data);
-      // router.refresh()
-      router.push('?redirect=confirmed', { scroll: false });
+      const exists = await checkFamilyCodeExistance(family_code);
+      console.log('-----------result - checkFamilyCodeExistance', exists)
+
+      if (!exists) {
+        setIsSubmit(false)
+        setIsErrorSubmit("El código proporcionado no existe")
+      } else {
+        router.push(`/i/${family_code}`);
+      }
+
     } catch (error) {
       console.log('Error submit', error)
-      setIsErrorSubmit(true)
+      setIsErrorSubmit("Algo no funciona correctamente en el sitio web, vuelve más tarde")
       setIsSubmit(false)
     }
   }
 
   return (
     <Container fluid>
-      <Title
-        order={2}
-        fw={400}
-        ta="center"
-        mb="40px"
+      <Flex
+        direction="column"
+        gap="40px"
       >
-        Confirma tu asistencia
-      </Title>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <TextInput
-          mt="md"
-          placeholder="Without error styles on input"
-          label="Without error styles on input"
-          error="Something went wrong"
-          withErrorStyles={false}
-          rightSectionPointerEvents="none"
-          name="familyCode"
-          rightSection={
-            <IconExclamationCircle
-              style={{ width: rem(20), height: rem(20) }}
-              color="var(--mantine-color-error)"
-            />
-          }
-          {...register("searchFamily")}
-        />
-
-        <Button
-          variant="default"
-          color="#e1a9bf"
-          radius="xl"
-          size="md"
-          type='submit'
-          classNames={{
-            root: wiggle ? 'wiggle' : ''
-          }}
-          disabled={isSubmit}
+        <Title
+          order={2}
+          fw={400}
+          ta="center"
         >
-          {isSubmit ? 'Confirmando...' : 'Confirmar'}
-        </Button>
-      </form>
+          Confirma tu asistencia
+        </Title>
+
+        <Text ta="center">Si los QRs no son lo tuyo, también puedes ingresar el código presente en la tarjetilla de la invitación</Text>
+
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <TextInput
+          size="md"
+            radius="xl"
+            placeholder="Ingresa tu código"
+            error={errors.searchFamily ? errors.searchFamily.message : isErrorSubmit ? isErrorSubmit : ''}
+            withErrorStyles={errors.searchFamily || isErrorSubmit ? true : false}
+            rightSectionPointerEvents="none"
+            name="familyCode"
+            autocomplete="off"
+            onChange={() => setIsErrorSubmit('')}
+            rightSection={
+              errors.searchFamily || isErrorSubmit ?
+                <IconExclamationCircle
+                  style={{ width: rem(20), height: rem(20) }}
+                  color="var(--mantine-color-error)"
+                />
+                : null
+            }
+            {...register("searchFamily", {
+              validate: (value) => value.length === 3 || "El código tiene que ser de 3 carácteres"
+            })}
+          />
+
+          <Flex
+            justify="center"
+            mt="20px"
+          >
+            <Button
+              variant="default"
+              color="#e1a9bf"
+              radius="xl"
+              size="md"
+              type='submit'
+              disabled={isSubmit}
+            >
+              {isSubmit ? 'Conprobando...' : 'Comprobar'}
+            </Button>
+          </Flex>
+        </form>
+      </Flex>
     </Container>
   )
 }

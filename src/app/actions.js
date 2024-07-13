@@ -1,5 +1,9 @@
 'use server'
-import { updateGuestById } from "@/helpers/queries"
+import { checkFamilyCode, updateGuestById } from "@/helpers/queries"
+
+export async function checkFamilyCodeExistance(familyCode) {
+  return await checkFamilyCode(familyCode)
+}
  
 export async function updateGuestsForm(data) {
   const guests = Object.keys(data).map(id => ({
