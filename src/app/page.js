@@ -10,6 +10,7 @@ import Inefable from "@/components/sections/Inefable";
 import Map from "@/components/sections/Map";
 import Playlist from "@/components/sections/Playlist";
 import Schedule from "@/components/sections/Timeline";
+import Menu from "@/components/elements/Menu";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
       <Album />
       <Hashtag />
       <Footer />
+      <Menu />
     </main>
   );
 }

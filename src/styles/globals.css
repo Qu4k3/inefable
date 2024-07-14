@@ -42,6 +42,41 @@ body {
   }*/
 }
 
+nav {
+  position: absolute;
+  top: -260px;
+  left: -280px;
+  border: 2px solid #e1a9bf;
+  border-radius: 100%;
+  width: 600px;
+  height: 600px;
+  padding: 70px 120px;
+  background-color: #ffffff;
+  box-shadow: -3px -3px 20px rgba(0,0,0, .15);
+
+  ul {
+    li {
+      list-style: none;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        height: 1px;
+        width: 15px;
+        background-color: #e1a9bf;
+        left: -25px;
+        top: 12px;
+      }
+
+      a {
+        text-decoration: none;
+        color: #000000;
+      }
+    }
+  }
+}
+
 .home {
   display: flex;
   flex-direction: column;
