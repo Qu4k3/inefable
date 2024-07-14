@@ -2,7 +2,11 @@ import { Container, Title } from "@mantine/core";
 
 const Map = () => {
   return (
-    <Container>
+    <Container
+      id="mapa"
+      py="40px"
+      fluid
+    >
       <Title
         order={2}
         fw={400}

@@ -3,7 +3,11 @@ import { IconInfoCircle } from '@tabler/icons-react';
 
 const Inefable = () => {
   return (
-    <Container>
+    <Container
+      id="inefable"
+      py="40px"
+      fluid
+    >
       <Title
         order={2}
         fw={400}

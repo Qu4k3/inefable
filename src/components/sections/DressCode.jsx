@@ -17,7 +17,11 @@ const colors = [
 
 const DressCode = () => {
   return (
-    <Container>
+    <Container
+      id="dress-code"
+      py="40px"
+      fluid
+    >
       <Flex
         direction="column"
         gap="40px"

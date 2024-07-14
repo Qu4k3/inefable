@@ -4,7 +4,11 @@ import Countdown from "../elements/Countdown";
 
 const Header = () => {
   return (
-    <Container>
+    <Container
+      id="top"
+      py="40px"
+      fluid
+    >
       <Flex direction="column" align="center" gap="40px">
         <Countdown className="countdown" finalDate="2024-11-02T17:00:00" />
 

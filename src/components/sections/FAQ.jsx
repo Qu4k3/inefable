@@ -45,7 +45,11 @@ const faqs = [
 
 const FAQ = () => {
   return (
-    <Container fluid>
+    <Container
+      id="preguntas-frecuentes"
+      py="40px"
+      fluid
+    >
       <Title
         order={2}
         fw={400}

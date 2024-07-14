@@ -3,7 +3,11 @@ import { Button, Container, Flex, Text, Title } from "@mantine/core";
 
 const Album = () => {
   return (
-    <Container>
+    <Container
+      id="album"
+      py="40px"
+      fluid
+    >
       <Flex
         direction="column"
         gap="40px"

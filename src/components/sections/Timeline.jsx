@@ -30,7 +30,11 @@ const timelineEvents = [
 
 const Schedule = () => {
   return (
-    <Container fluid>
+    <Container
+      id="programacion"
+      py="40px"
+      fluid
+    >
       <Title
         order={2}
         fw={400}
@@ -40,7 +44,30 @@ const Schedule = () => {
         Programa
       </Title>
 
-      <Timeline color="#E8BCCD" active={3} bulletSize={48} lineWidth={2}>
+      <Timeline
+        color="#E8BCCD"
+        active={3}
+        bulletSize={48}
+        lineWidth={2}
+        styles={{
+          itemTitle: { fontSize: "18px"}
+        }}
+      >
+
+        <Timeline.Item bullet={<IconCirclesRelation />} lineVariant="solid" title="Ceremonia">
+          <Text size="md" mt={4}>17h</Text>
+          <Text c="dimmed" size="md">Haremos unos votos...</Text>
+        </Timeline.Item>
+
+        <Timeline.Item bullet={<IconCirclesRelation />} lineVariant="solid" title="18h">
+          <Text size="md">Cóctel</Text>
+          <Text c="dimmed" size="md" mt={4}>Dispondrenos de un cortador de Jamón, tabla de quesos... y 12 bocaditos escogidos por nosotros :)</Text>
+        </Timeline.Item>
+
+        <Timeline.Item bullet={<IconCirclesRelation />} lineVariant="solid" title="18h — Cóctel">
+          <Text c="dimmed" size="md" mt={4}>Dispondrenos de un cortador de Jamón, tabla de quesos... y 12 bocaditos escogidos por nosotros :)</Text>
+        </Timeline.Item>
+
         {timelineEvents.map((event) => (
           <Timeline.Item key={event.time} bullet={event.icon} lineVariant={event.lineVariant}>
             <Text size="lg" fw={700} lh='16px' mb="8px">{event.time}</Text>

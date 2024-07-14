@@ -3,7 +3,11 @@ import { Button, Container, Flex, Text, Title } from "@mantine/core";
 
 const Playlist = () => {
   return (
-    <Container>
+    <Container
+      id="playlist"
+      py="40px"
+      fluid
+    >
       <Flex
         direction="column"
         gap="40px"

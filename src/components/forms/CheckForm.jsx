@@ -34,7 +34,6 @@ export function CheckForm({ rows }) {
     setIsSubmit(true)
     try {
       const exists = await checkFamilyCodeExistance(family_code);
-      console.log('-----------result - checkFamilyCodeExistance', exists)
 
       if (!exists) {
         setIsSubmit(false)
@@ -51,7 +50,11 @@ export function CheckForm({ rows }) {
   }
 
   return (
-    <Container fluid>
+    <Container
+      id="confirmacion"
+      py="40px"
+      fluid
+    >
       <Flex
         direction="column"
         gap="40px"
@@ -68,7 +71,7 @@ export function CheckForm({ rows }) {
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <TextInput
-          size="md"
+            size="md"
             radius="xl"
             placeholder="Ingresa tu código"
             error={errors.searchFamily ? errors.searchFamily.message : isErrorSubmit ? isErrorSubmit : ''}
@@ -85,6 +88,10 @@ export function CheckForm({ rows }) {
                 />
                 : null
             }
+            styles={{
+              root: { maxWidth: "350px", margin: "0 auto" },
+              error: { textAlign: "center" }
+            }}
             {...register("searchFamily", {
               validate: (value) => value.length === 3 || "El código tiene que ser de 3 carácteres"
             })}
@@ -95,7 +102,7 @@ export function CheckForm({ rows }) {
             mt="20px"
           >
             <Button
-              variant="default"
+              variant="filled"
               color="#e1a9bf"
               radius="xl"
               size="md"

@@ -4,7 +4,11 @@ import Link from "next/link";
 
 const Hashtag = () => {
   return (
-    <Container>
+    <Container
+      id="hashtag"
+      py="40px"
+      fluid
+    >
       <Flex
         direction="column"
         gap="40px"
