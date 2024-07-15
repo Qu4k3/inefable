@@ -57,7 +57,7 @@ const Menu = () => {
           >Apartados</Title>
           <ul>
             {links.map((link) => (
-              <li>
+              <li key={link.href}>
                 <Link href={link.href}>{link.text}</Link>
               </li>
             ))}
