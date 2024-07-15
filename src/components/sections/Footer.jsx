@@ -1,17 +1,23 @@
-import { Container, Title } from "@mantine/core";
+import { Container, Text, Title } from "@mantine/core";
 
 const Footer = () => {
   return (
-    <Container>
+    <Container ta="center">
       <Title
         order={2}
         fw={400}
         ta="center"
-        mb="40px"
+        mb="10px"
         ff="text"
+        size="32px"
+        pl="6px"
       >
         I <small>&</small> P
       </Title>      
+
+      <Text
+      size="sm"
+      >02.11.24</Text>
 
     </Container>
   );

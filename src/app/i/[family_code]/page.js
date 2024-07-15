@@ -22,20 +22,20 @@ export default async function Guest({ params, searchParams }) {
           </>
           : isSubmitted ? <Alert
             variant="outline"
-            color="#e1a9bf"
+            color="#E8BCCD"
             radius="xl"
             styles={{
               root: { backgroundColor: 'rgba(255, 255, 255, .8)' },
               message: { textAlign: 'center', padding: '10px' },
             }}
           >
-            <h4 style={{ color: '#e1a9bf', display: 'flex', justifyContent: 'center', marginBottom: '15px', gap: '10px', fontSize: '20px' }}><IconCircleCheck /> Datos guardados</h4>
+            <h4 style={{ color: '#E8BCCD', display: 'flex', justifyContent: 'center', marginBottom: '15px', gap: '10px', fontSize: '20px' }}><IconCircleCheck /> Datos guardados</h4>
             <p style={{ marginBottom: '10px' }}>¡Ya está todo hecho aquí!</p>
             <p>Para ver la programación, acceso al lugar llegar, transporte, etc. pincha en el botón de abajo.</p>
             <Link href="/">
               <Button
                 variant="outline"
-                color="#e1a9bf"
+                color="#E8BCCD"
                 radius="xl"
                 rightSection={<IconArrowRight size={14} />}
                 styles={{

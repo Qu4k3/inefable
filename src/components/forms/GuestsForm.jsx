@@ -119,7 +119,7 @@ export function GuestForm({ rows }) {
           })}
         <Button
           variant="default"
-          color="#e1a9bf"
+          color="#E8BCCD"
           radius="xl"
           size="md"
           type='submit'

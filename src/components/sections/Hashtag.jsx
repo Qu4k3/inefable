@@ -43,7 +43,7 @@ const Hashtag = () => {
         >
           <Button
             variant="filled"
-            color="#e1a9bf"
+            color="#E8BCCD"
             radius="xl"
             size="md"
           >
