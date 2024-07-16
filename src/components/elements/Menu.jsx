@@ -17,7 +17,7 @@ const links = [
     text: "Dress Code"
   },
   {
-    href: "#alojamientos",
+    href: "#mapa",
     text: "Alojamientos, Transporte, Puntos de interés"
   },
   {

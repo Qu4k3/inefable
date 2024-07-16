@@ -98,6 +98,17 @@ nav {
   }
 }
 
+.mapboxgl-ctrl-bottom-right,
+.mapboxgl-ctrl-bottom-left {
+  display: none !important;
+}
+
+@media only screen and (min-width: 550px) {
+  #map {
+    border-radius: 16px;
+  }
+}
+
 .home {
   display: flex;
   flex-direction: column;
@@ -310,11 +321,11 @@ h1 {
           &:before {
             content: "";
             position: absolute;
+            height: 5px;
+            width: 5px;
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
-            height: 5px;
-            width: 5px;
             background-color: #fff;
             border-radius: 25px;
           }

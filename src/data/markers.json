@@ -1,0 +1,38 @@
+[
+  {
+    "point": "Paraisso al mar",
+    "latitude": 36.70710169163218,
+    "longitude": -2.8543215082173963,
+    "icon": "confetti"
+  },
+  {
+    "point": "Aeropuerto de Almería",
+    "latitude": 36.84488417574279,
+    "longitude": -2.370430179034104,
+    "icon": "planeTilt"
+  },
+  {
+    "point": "Aeropuerto de Granada",
+    "latitude": 37.1878654055616,
+    "longitude": -3.777956896029557,
+    "icon": "planeTilt"
+  },
+  {
+    "point": "Parada Autobús L30",
+    "latitude": 36.8482881680691, 
+    "longitude": -2.371349873304754,
+    "icon": "busStop"
+  },
+  {
+    "point": "Parada Autobús L30 - Cerca Estación Autobuses",
+    "latitude": 36.83779239517121, 
+    "longitude": -2.456117349529615,
+    "icon": "busStop"
+  },
+  {
+    "point": "Estación de Autobuses",
+    "latitude": 36.835263585686924, 
+    "longitude": -2.455200050751569,
+    "icon": "busStop"
+  }
+]

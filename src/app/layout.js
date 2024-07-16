@@ -26,6 +26,7 @@ export default function RootLayout({ children }) {
       <html lang="es">
         <head>
           <ColorSchemeScript />
+          <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v3.5.1/mapbox-gl.css" rel="stylesheet"></link>
         </head>
         <body className={`${lora.variable} ${halimun.variable}`}>
           <MantineProvider
