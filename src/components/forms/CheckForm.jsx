@@ -1,13 +1,12 @@
 'use client'
 import { useRouter } from 'next/navigation';
-import { checkFamilyCodeExistance, updateGuestsForm } from "@/app/actions"
+import { checkFamilyCodeExistance } from "@/app/actions"
 import { useForm } from "react-hook-form"
 import { useState } from 'react';
-import { Alert, Button, Container, Flex, rem, Text, TextInput, Title } from '@mantine/core';
-import { IconAlertCircle, IconExclamationCircle } from '@tabler/icons-react';
-import { useInputState } from '@mantine/hooks';
+import { Button, Container, Flex, rem, Text, TextInput, Title } from '@mantine/core';
+import { IconExclamationCircle } from '@tabler/icons-react';
 
-export function CheckForm({ rows }) {
+export function CheckForm() {
   const router = useRouter();
 
   const [isErrorSubmit, setIsErrorSubmit] = useState("");
@@ -18,16 +17,6 @@ export function CheckForm({ rows }) {
     handleSubmit,
     formState: { errors }
   } = useForm()
-
-  /*useEffect(() => {
-    if (JSON.stringify(rows) !== JSON.stringify(localState)) {
-      setIsSubmitDisabled(false);
-    }
-
-    if (JSON.stringify(rows) === JSON.stringify(localState)) {
-      setIsSubmitDisabled(true);
-    }
-  }, [localState])*/
 
   const onSubmit = async ({ searchFamily }) => {
     const family_code = searchFamily.toLowerCase();
@@ -67,33 +56,39 @@ export function CheckForm({ rows }) {
           Confirma tu asistencia
         </Title>
 
-        <Text ta="center">Si los QRs no son lo tuyo, también puedes ingresar el código presente en la tarjetilla de la invitación</Text>
+        <Text ta="center">Si los QRs no son lo tuyo, también puedes ingresar el código presente en la tarjeta de la invitación.</Text>
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <TextInput
             size="md"
             radius="xl"
+            ta="center"
             placeholder="Ingresa tu código"
             error={errors.searchFamily ? errors.searchFamily.message : isErrorSubmit ? isErrorSubmit : ''}
             withErrorStyles={errors.searchFamily || isErrorSubmit ? true : false}
-            rightSectionPointerEvents="none"
+            leftSectionPointerEvents="none"
             name="familyCode"
-            autocomplete="off"
-            onChange={() => setIsErrorSubmit('')}
-            rightSection={
+            autoComplete="off"
+            leftSectionWidth="14px"
+            leftSectionProps
+            leftSection={
               errors.searchFamily || isErrorSubmit ?
                 <IconExclamationCircle
-                  style={{ width: rem(20), height: rem(20) }}
+                  style={{ width: rem(20), height: rem(20), position: "absolute", left: "10px" }}
                   color="var(--mantine-color-error)"
                 />
                 : null
             }
             styles={{
               root: { maxWidth: "350px", margin: "0 auto" },
+              input: { textAlign: "center" },
               error: { textAlign: "center" }
             }}
             {...register("searchFamily", {
-              validate: (value) => value.length === 3 || "El código tiene que ser de 3 carácteres"
+              //validate: (value) => value.length === 3 || "El código tiene que ser de 3 carácteres",
+              onChange: () => {
+                if (isErrorSubmit) setIsErrorSubmit('')
+              }
             })}
           />
 
@@ -108,8 +103,10 @@ export function CheckForm({ rows }) {
               size="md"
               type='submit'
               disabled={isSubmit}
+            /*loading={isSubmit}
+            loaderProps={{ type: 'dots' }}*/
             >
-              {isSubmit ? 'Conprobando...' : 'Comprobar'}
+              {isSubmit ? 'Comprobando...' : 'Comprobar'}
             </Button>
           </Flex>
         </form>

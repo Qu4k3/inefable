@@ -59,7 +59,13 @@ const FAQ = () => {
         Preguntas frecuentes
       </Title>
 
-      <Accordion variant="separated" radius="lg">
+      <Accordion
+        variant="separated"
+        radius="lg"
+        styles={{
+          item: { backgroundColor: "#fdf8fa", borderColor: "#E8BCCD" }
+        }}
+      >
         {faqs.map((faq) => (
           <Accordion.Item key={faq.value} value={faq.value}>
             <Accordion.Control>{faq.question}</Accordion.Control>

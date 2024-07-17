@@ -17,22 +17,22 @@ const Album = () => {
           order={2}
           fw={400}
           ta="center"
+          pos="relative"
         >
           Album
+          <DotLottieReact
+            className="animated-svg behind-title behind-right"
+            src="/lottie/album.lottie"
+            loop
+            autoplay
+            autoResizeCanvas={false}
+          />
         </Title>
 
         <div>
           <Text ta="center" mb="sm">El día de la boda toma muchas fotos y déjanos un bonito y divertido recuerdo.</Text>
           <Text fw="bold" ta="center">Puedes compartir todas tus fotos en este album compartido.</Text>
         </div>
-
-        <DotLottieReact
-          className="animated-svg"
-          src="/lottie/album.lottie"
-          loop
-          autoplay
-          autoResizeCanvas={false}
-        />
 
         <a
           target="_blank"

@@ -18,23 +18,19 @@ const Hashtag = () => {
           order={2}
           fw={400}
           ta="center"
+          pos="relative"
         >
           #inefableday
-        </Title>
-
-        <Text ta="center">Comparte tus fotos y vídeos de este hermoso día con nuestro #hashtag</Text>
-
-        <div>
           <DotLottieReact
-            className="animated-svg"
+            className="animated-svg behind-title behind-left"
             src="/lottie/insta.lottie"
             loop
             autoplay
             autoResizeCanvas={false}
           />
+        </Title>
 
-          <Text size="xl" ta="center">#inefableday</Text>
-        </div>
+        <Text ta="center">Comparte tus fotos y vídeos de este hermoso día con nuestro #hashtag</Text>
 
         <a
           target="_blank"

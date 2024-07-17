@@ -34,7 +34,7 @@ const DressCode = () => {
           Dress Code
         </Title>
 
-        <Text ta="center">El código de vestimenta es [formal/semi-formal/casual/elegante]. Nos encantaría que evitaras usar estos colores:</Text>
+        <Text ta="center">Para mantener la armonía visual del evento, agradecemos que evites los siguientes colores en tu atuendo:</Text>
 
         <Group justify="center" align="flex-start" gap="xl" grow={true} >
           {colors.map((color) => (
@@ -65,7 +65,7 @@ const DressCode = () => {
           ))}
         </Group>
 
-        <Text ta="center">¡Gracias!</Text>
+        <Text ta="center">Tu colaboración nos ayudará a crear una atmósfera perfecta para celebrar juntos.</Text>
 
       </Flex>
 

@@ -7,6 +7,8 @@
   --color-active-background-rgb: 225, 169, 191;
   --color-main-default-rgb: 40, 35, 37;
   --color-gray-rgb: 125, 122, 122;
+
+  --mantine-primary-color-filled: #E8BCCD;
 }
 
 * {
@@ -118,7 +120,7 @@ nav {
 
   &::before {
     content: '';
-    position: absolute;
+    position: fixed;
     background-image: url(../../public/flower-1.png);
     background-attachment: fixed;
     background-position: 100% 0%;
@@ -134,7 +136,7 @@ nav {
 
   &::after {
     content: '';
-    position: absolute;
+    position: fixed;
     background-image: url(../../public/flower-1.png);
     background-attachment: fixed;
     background-position: 100% 0%;
@@ -424,10 +426,31 @@ h1 {
   }
 }
 
+.mantine-Accordion-item[data-active="true"] {
+  background-color: #ffffff !important;
+}
+
 .animated-svg {
   max-width: 180px;
   height: auto;
   margin: 0 auto;
+
+  &.behind-title {
+    position: absolute;
+    top: -80px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 90px;
+    width: 180px;
+    opacity: .5;
+  }
+  &.behind-left{
+    left: -100%;
+  }
+  &.behind-right{
+    left: 50%;
+  }
 }
 
 .spotify-iframe {

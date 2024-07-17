@@ -17,22 +17,22 @@ const Playlist = () => {
           order={2}
           fw={400}
           ta="center"
+          pos="relative"
         >
           Playlist
+          <DotLottieReact
+            className="animated-svg behind-title behind-left"
+            src="/lottie/music.lottie"
+            loop
+            autoplay
+            autoResizeCanvas={false}
+          />
         </Title>
 
         <div>
           <Text ta="center" mb="sm">¿Cuál es la canción imprescindible en la fiesta?</Text>
           <Text fw="bold" ta="center">¡Añade las canciones que deseeses en nuestra lista de Spotify!</Text>
         </div>
-
-        <DotLottieReact
-          className="animated-svg"
-          src="/lottie/music.lottie"
-          loop
-          autoplay
-          autoResizeCanvas={false}
-        />
 
         <iframe
           className="spotify-iframe"
