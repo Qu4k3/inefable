@@ -24,7 +24,7 @@ export default function Home() {
         >
           ¡Vuelve en <Countdown
             className="countdown-inline"
-            finalDate="2024-07-20T00:00:00"
+            finalDate="2024-07-29T00:00:00"
             finalText="breves..."
           />!
         </Notification>
