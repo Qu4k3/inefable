@@ -1,5 +1,5 @@
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import { Affix, Button, Container } from "@mantine/core";
+'use client'
+import { Affix, Button } from "@mantine/core";
 import { IconMusic, IconMusicOff } from "@tabler/icons-react";
 import { useEffect, useRef, useState } from "react";
 
@@ -18,10 +18,22 @@ const Audio = () => {
     setIsSongPlaying(!isSongPlaying);
   }
 
-  useEffect(() => {
+  const handleScroll = () => {
     if (!isSongPlaying && audioRef.current) {
-      audioRef.current.play();
+      audioRef.current.play().then(() => {
+        setIsSongPlaying(true); // Ensure audio plays only once
+        window.removeEventListener('scroll', handleScroll); // Remove the scroll event listener after playing
+      }).catch(error => {
+        console.error("Failed to play audio:", error);
+      });
     }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (

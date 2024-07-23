@@ -1,3 +1,4 @@
+'use client'
 import { Affix, Button, Container, Title } from "@mantine/core";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import { useState } from "react";
@@ -58,7 +59,7 @@ const Menu = () => {
           <ul>
             {links.map((link) => (
               <li key={link.href}>
-                <Link href={link.href}>{link.text}</Link>
+                <Link onClick={() => setIsMenuActive(false)} href={link.href}>{link.text}</Link>
               </li>
             ))}
           </ul>
