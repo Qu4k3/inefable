@@ -22,7 +22,7 @@ const Playlist = () => {
           Playlist
           <DotLottieReact
             className="animated-svg behind-title behind-left"
-            src="/lottie/music.lottie"
+            src="/lottie/playlist.lottie"
             loop
             autoplay
             autoResizeCanvas={false}
@@ -40,7 +40,7 @@ const Playlist = () => {
           width="100%"
           height="152"
           frameBorder="0"
-          allowfullscreen=""
+          allowFullScreen=""
           allowtransparency="true"
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy"

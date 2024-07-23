@@ -11,10 +11,12 @@ import Map from "@/components/sections/Map";
 import Playlist from "@/components/sections/Playlist";
 import Schedule from "@/components/sections/Timeline";
 import Menu from "@/components/elements/Menu";
+import Audio from "@/components/elements/Audio";
 
 export default function Home() {
   return (
     <main className="home">
+      <Audio />
       <Header />
       <Schedule />
       <CheckForm />

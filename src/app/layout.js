@@ -30,6 +30,7 @@ export default function RootLayout({ children }) {
         </head>
         <body className={`${lora.variable} ${halimun.variable}`}>
           <MantineProvider
+            defaultColorScheme="light"
             theme={{
               fontFamily: `${lora.style.fontFamily}`,
               headings: { fontFamily: `${halimun.style.fontFamily}` },

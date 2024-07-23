@@ -12,6 +12,9 @@ import * as turf from '@turf/turf';
 import MARKERS from '../../data/markers.json';
 import { useMemo, useState } from 'react';
 import { IconPlaneTilt, IconConfetti, IconBusStop, IconMapPinFilled } from '@tabler/icons-react';
+import Confetti from '@/icons/svg/solid/confetti.svg?url'
+import Plane from '@/icons/svg/solid/plane.svg?url'
+import BusStop from '@/icons/svg/solid/busStop.svg?url'
 
 const TOKEN = 'pk.eyJ1IjoicXU0azMiLCJhIjoiY2wxY25pYXEzMDljZjNqbzI2eWRhbXR3ZSJ9.vOLta-r7RB264oxtGL_x3w';
 

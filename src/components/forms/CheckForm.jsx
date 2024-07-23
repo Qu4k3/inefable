@@ -85,7 +85,7 @@ export function CheckForm() {
               error: { textAlign: "center" }
             }}
             {...register("searchFamily", {
-              //validate: (value) => value.length === 3 || "El código tiene que ser de 3 carácteres",
+              validate: (value) => value.length === 3 || "El código tiene que ser de 3 carácteres",
               onChange: () => {
                 if (isErrorSubmit) setIsErrorSubmit('')
               }

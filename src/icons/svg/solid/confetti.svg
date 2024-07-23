@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+    <defs>
+        <clipPath id="b">
+            <path d="M0 0h24v24H0z"/>
+        </clipPath>
+        <style>
+            .b{fill:none}.c{fill:#fff}
+        </style>
+    </defs>
+    <g id="a" style="clip-path:url(#b)">
+        <path class="b" d="M0 0h24v24H0Z"/>
+        <path d="M21 5.088a10.544 10.544 0 0 1 .238 14.667L21 20l-4.971 4.97a3.515 3.515 0 0 1-4.8.158l-.169-.158L6.088 20A10.544 10.544 0 1 1 21 5.088Z" transform="translate(-1.545 -2)"/>
+        <path class="b" d="M0 0h24v24H0Z"/>
+        <path class="b" d="M0 0h12.145v10.471H0Z" transform="translate(5.927 3.813)"/>
+        <path class="c" d="M4.884 5.25H4a.25.25 0 0 1 0-.5h.884a.25.25 0 0 1 0 .5Z" transform="translate(3.975 .994)"/>
+        <path class="c" d="M5 5.134a.25.25 0 0 1-.25-.25V4a.25.25 0 0 1 .5 0v.884a.25.25 0 0 1-.25.25Z" transform="translate(3.457 1.556)"/>
+        <path class="c" d="M11 5.134a.25.25 0 0 1-.243-.311l.221-.884a.25.25 0 0 1 .485.121l-.221.884a.25.25 0 0 1-.242.19Z" transform="translate(.509 1.556)"/>
+        <path class="c" d="M18.884 5.25H18a.25.25 0 0 1 0-.5h.883a.25.25 0 0 1 0 .5Z" transform="translate(-2.859 .994)"/>
+        <path class="c" d="M19 5.134a.25.25 0 0 1-.25-.25V4a.25.25 0 0 1 .5 0v.884a.25.25 0 0 1-.25.25Z" transform="translate(-3.458 1.556)"/>
+        <path class="c" d="M14 9.692a.25.25 0 0 1-.177-.427l.442-.442a.25.25 0 1 1 .354.354l-.442.442a.249.249 0 0 1-.177.073Z" transform="translate(-.949 -1.263)"/>
+        <path class="c" d="M18 12.971a.25.25 0 0 1-.06-.493l.884-.221a.25.25 0 0 1 .121.485l-.884.221a.251.251 0 0 1-.061.008Z" transform="translate(-2.859 -3.235)"/>
+        <path class="c" d="M18.884 19.25H18a.25.25 0 1 1 0-.5h.883a.25.25 0 0 1 0 .5Z" transform="translate(-2.859 -6.897)"/>
+        <path class="c" d="M19 19.134a.25.25 0 0 1-.25-.25V18a.25.25 0 1 1 .5 0v.883a.25.25 0 0 1-.25.251Z" transform="translate(-3.458 -6.343)"/>
+        <path class="c" d="M3.44 15.11a.692.692 0 0 1-.627-.984L4.752 9.9a.25.25 0 0 1 .4-.073L8.035 12.7a.25.25 0 0 1-.073.4l-4.231 1.946a.685.685 0 0 1-.291.064Zm1.616-4.679-1.79 3.905a.192.192 0 0 0 .254.256L7.428 12.8Z" transform="translate(4.253 -1.901)"/>
+    </g>
+</svg>

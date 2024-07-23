@@ -116,7 +116,7 @@ nav {
   flex-direction: column;
   gap: 100px;
   max-width: 550px;
-  margin: 40px auto;
+  margin-bottom: 40px;
 
   &::before {
     content: '';
@@ -150,6 +150,53 @@ nav {
     opacity: .2;
     rotate: 180deg;
   }
+}
+
+.header {
+  min-height: 100vh;
+  min-height: 100svh;
+  background-color: #ffffff;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0px 40px 40px #ffffff;
+
+  &::before {
+    content: '';
+    position: absolute;
+    background-image: url(../../public/count-a.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 400px 400px;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .2;
+    transform: translateY(0%);
+    animation: pulseOpacity 6s ease-in-out infinite alternate;
+  }
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  opacity: .5;
+  max-width: 120px !important;
+
+  /*&::before {
+    content: "Desliza hacia abajo";
+    color: #000000;
+    position: absolute;
+    bottom: 80px;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }*/
 }
 
 h1 {
@@ -202,7 +249,6 @@ h1 {
 .bottom {
   font-weight: 200;
   font-size: 20px;
-  margin-top: auto;
 }
 
 .bottom small {
@@ -220,7 +266,7 @@ h1 {
   position: relative;
 
   &::after {
-    content: 'Nos casamos en...';
+    content: 'Nos casamos en..';
     opacity: .8;
     white-space: nowrap;
     position: absolute;
@@ -437,7 +483,7 @@ h1 {
 
   &.behind-title {
     position: absolute;
-    top: -80px;
+    top: -90px;
     left: 0;
     right: 0;
     z-index: -1;
@@ -445,10 +491,12 @@ h1 {
     width: 180px;
     opacity: .5;
   }
-  &.behind-left{
+
+  &.behind-left {
     left: -100%;
   }
-  &.behind-right{
+
+  &.behind-right {
     left: 50%;
   }
 }
@@ -466,13 +514,25 @@ h1 {
   display: none !important;
 }
 
+.btn-sound {
+  height: 42px;
+  width: 42px;
+
+  &.active {
+    animation: pulse 3s infinite;
+  }
+
+  .sound-active {
+    animation: sound-active 3s ease-in-out infinite alternate;
+  }
+}
+
 .wiggle {
   /*animation: wiggle 0.5s;*/
   animation: wiggle-infinite 5s infinite;
 }
 
 @keyframes wiggle {
-
   0%,
   100% {
     transform: translateX(0);
@@ -492,7 +552,6 @@ h1 {
 }
 
 @keyframes wiggle-infinite {
-
   0%,
   100% {
     transform: translateX(0);
@@ -512,5 +571,47 @@ h1 {
 
   16% {
     transform: translateX(0);
+  }
+}
+
+@keyframes sound-active {
+  from {
+    transform: rotate(-15deg);
+  }
+
+  to {
+    transform: rotate(15deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 #E8BCCD;
+  }
+
+  to {
+    box-shadow: 0 0 0 15px #E8BCCD01;
+  }
+}
+
+@keyframes pulseOpacity {
+  0% {
+    opacity: .2;
+    transform: scale(95%);
+  }
+
+  to {
+    opacity: .4;
+    transform: scale(100%);
+  }
+}
+
+@keyframes rotate360 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
   }
 }

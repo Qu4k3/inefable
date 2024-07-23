@@ -63,7 +63,7 @@ const FAQ = () => {
         variant="separated"
         radius="lg"
         styles={{
-          item: { backgroundColor: "#fdf8fa", borderColor: "#E8BCCD" }
+          item: { backgroundColor: "#fdf8fa"/*, borderColor: "#E8BCCD"*/ }
         }}
       >
         {faqs.map((faq) => (
