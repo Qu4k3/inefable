@@ -4,7 +4,7 @@ const faqs = [
   {
     value: "venue",
     question: "¿Dónde se celebrará la ceremonia y la boda?",
-    answer: "La ceremonia y todo el evento se celebrará en el mismo lugar, en Paraisso al Mar, ubicado en Calle La Higuera, 6, El Ejido, Almería.."
+    answer: "La ceremonia y todo el evento se celebrará en el mismo lugar, en Paraisso al Mar, ubicado en Calle La Higuera, 6, El Ejido, Almería."
   },
   {
     value: "arrival-time",
@@ -39,7 +39,7 @@ const faqs = [
   {
     value: "hashtag",
     question: "¿Hay un hashtag para la boda?",
-    answer: "Sí, nos encantaría que compartieras tus fotos usando el hashtag <strong>#inefableday</strong> en redes sociales."
+    answer: "Sí, nos encantaría que compartieras tus fotos y stories usando el hashtag <strong>#inefableday</strong> en redes sociales."
   }
 ]
 

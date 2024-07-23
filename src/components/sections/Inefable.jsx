@@ -20,7 +20,7 @@ const Inefable = () => {
         color="#E8BCCD"
         radius="xl"
         iconSize={40}
-        icon={<IconInfoCircle />}
+        /*icon={<IconInfoCircle />}*/
         styles={{
           root: { borderWidth: "2px"/*, border: "none", marginLeft: "5px"*/ }
         }}

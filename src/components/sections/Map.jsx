@@ -1,5 +1,21 @@
-import { Container, Title } from "@mantine/core";
+import { Container, Group, Stack, Text, Title } from "@mantine/core";
 import Plat from "../map/Plat";
+import { IconBusStop, IconConfetti, IconPlaneTilt } from "@tabler/icons-react";
+
+const legend = [
+  {
+    icon: <IconConfetti />,
+    text: "Lugar del evento"
+  },
+  {
+    icon: <IconPlaneTilt />,
+    text: "Aeropuerto"
+  },
+  {
+    icon: <IconBusStop />,
+    text: "Parada de bus"
+  }
+]
 
 const Map = () => {
   return (
@@ -21,6 +37,21 @@ const Map = () => {
 
       <Plat />
 
+      <Group
+        mt="xl"
+        justify="center"
+        gap="xl"
+      >
+        {legend.map((item) => (
+          <Stack
+            align="center"
+            gap="xs"
+          >
+            {item.icon}
+            <Text>{item.text}</Text>
+          </Stack>
+        ))}
+      </Group>
     </Container>
   );
 }
