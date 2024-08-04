@@ -117,6 +117,7 @@ nav {
           text-decoration: none;
           color: #000000;
           -webkit-tap-highlight-color: transparent;
+          display: flex;
         }
       }
     }
@@ -126,6 +127,16 @@ nav {
 .mapboxgl-ctrl-bottom-right,
 .mapboxgl-ctrl-bottom-left {
   display: none !important;
+}
+
+.map-icon {
+  background-color: #ffffff;
+  border-radius: 100%;
+  max-height: 40px;
+  max-width: 40px;
+  padding: 8px;
+  outline: 1px solid #000;
+  box-sizing: content-box;
 }
 
 @media only screen and (min-width: 550px) {
@@ -556,6 +567,7 @@ h1 {
 }
 
 @keyframes wiggle {
+
   0%,
   100% {
     transform: translateX(0);
@@ -575,6 +587,7 @@ h1 {
 }
 
 @keyframes wiggle-infinite {
+
   0%,
   100% {
     transform: translateX(0);

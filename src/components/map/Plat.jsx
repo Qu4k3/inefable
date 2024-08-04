@@ -10,34 +10,24 @@ import Map, {
 import * as turf from '@turf/turf';
 
 import MARKERS from '../../data/markers.json';
+import GEOJSON from '../../data/geojson.json';
+import WALK_GEOJSON from '../../data/walk-geojson.json';
 import { useMemo, useState } from 'react';
-import { IconPlaneTilt, IconConfetti, IconBusStop, IconMapPinFilled } from '@tabler/icons-react';
-import Confetti from '@/icons/svg/solid/confetti.svg?url'
-import Plane from '@/icons/svg/solid/plane.svg?url'
-import BusStop from '@/icons/svg/solid/busStop.svg?url'
+import { IconPlaneTilt, IconConfetti, IconBusStop, IconBus, IconBuildingArch, IconToolsKitchen2 } from '@tabler/icons-react';
 
 const TOKEN = 'pk.eyJ1IjoicXU0azMiLCJhIjoiY2wxY25pYXEzMDljZjNqbzI2eWRhbXR3ZSJ9.vOLta-r7RB264oxtGL_x3w';
 
 const iconMap = {
-  confetti: <IconConfetti />,
-  planeTilt: <IconPlaneTilt />,
-  busStop: <IconBusStop />
+  confetti: <IconConfetti className='map-icon' />,
+  planeTilt: <IconPlaneTilt className='map-icon' />,
+  busStop: <IconBusStop className='map-icon' />,
+  busStation: <IconBus className='map-icon' />,
+  monument: <IconBuildingArch className='map-icon' />,
+  tapas: <IconToolsKitchen2 className='map-icon' />
 };
 
 const Plat = () => {
   const [popupInfo, setPopupInfo] = useState(null);
-
-  const dataOne = {
-    type: "Feature",
-    properties: {},
-    geometry: {
-      type: "LineString",
-      coordinates: [
-        [36.8482881680691, -2.371349873304754],
-        [36.83779239517121, -2.456117349529615]
-      ]
-    }
-  };
 
   const pins = useMemo(
     () =>
@@ -46,7 +36,7 @@ const Plat = () => {
           key={`marker-${index}`}
           longitude={marker.longitude}
           latitude={marker.latitude}
-          anchor="bottom"
+          anchor="center"
           onClick={e => {
             // If we let the click event propagates to the map, it will immediately close the popup
             // with `closeOnClick: true`
@@ -54,7 +44,7 @@ const Plat = () => {
             setPopupInfo(marker);
           }}
         >
-            {iconMap[marker.icon]}
+          {iconMap[marker.icon]}
         </Marker>
       )),
     []
@@ -82,7 +72,8 @@ const Plat = () => {
 
       {popupInfo && (
         <Popup
-          anchor="top"
+          anchor="bottom"
+          offset={30}
           longitude={Number(popupInfo.longitude)}
           latitude={Number(popupInfo.latitude)}
           onClose={() => setPopupInfo(null)}
@@ -100,18 +91,46 @@ const Plat = () => {
         </Popup>
       )}
 
-      <Source id="polylineLayer" type="geojson" data={dataOne}>
+      <Source id="dataAccommodation" type="geojson" data={GEOJSON}>
         <Layer
-          id="lineLayer"
+          id="fillAccommodation"
+          type="fill"
+          source="dataAccommodation"
+          layout={{
+            "fill-join": "round",
+            "fill-cap": "round"
+          }}
+          paint={{
+            "fill-color": "rgba(232, 188, 205, 0.4)",
+          }}
+        />
+        <Layer
+          id="lineAccommodation"
           type="line"
-          source="my-data"
+          source="dataAccommodation"
           layout={{
             "line-join": "round",
             "line-cap": "round"
           }}
           paint={{
-            "line-color": "rgba(3, 170, 238, 0.5)",
-            "line-width": 5
+            "line-color": "rgba(232, 188, 205, 0.8)",
+            "line-width": 2
+          }}
+        />
+      </Source>
+
+      <Source id="dataWalk" type="geojson" data={WALK_GEOJSON}>
+        <Layer
+          id="lineWalk"
+          type="line"
+          source="dataWalk"
+          layout={{
+            "line-join": "round",
+            "line-cap": "round"
+          }}
+          paint={{
+            "line-color": "rgba(232, 188, 205, 0.9)",
+            "line-width": 8
           }}
         />
       </Source>

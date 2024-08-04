@@ -65,7 +65,7 @@ export function CheckForm() {
             ta="center"
             placeholder="Ingresa tu código"
             error={errors.searchFamily ? errors.searchFamily.message : isErrorSubmit ? isErrorSubmit : ''}
-            withErrorStyles={errors.searchFamily || isErrorSubmit ? true : false}
+            withErrorStyles={isErrorSubmit ? true : false}
             leftSectionPointerEvents="none"
             name="familyCode"
             autoComplete="off"
@@ -85,7 +85,11 @@ export function CheckForm() {
               error: { textAlign: "center" }
             }}
             {...register("searchFamily", {
-              validate: (value) => value.length === 3 || "El código tiene que ser de 3 carácteres",
+              validate: (value) => {
+                if (value.length === 0) return "No has introducido ningún código";
+                if (value.length !== 3) return "El código tiene que ser de 3 carácteres";
+                return true;
+              },
               onChange: () => {
                 if (isErrorSubmit) setIsErrorSubmit('')
               }

@@ -1,20 +1,36 @@
 import { Container, Group, Stack, Text, Title } from "@mantine/core";
 import Plat from "../map/Plat";
-import { IconBusStop, IconConfetti, IconPlaneTilt } from "@tabler/icons-react";
+import { IconBuildingArch, IconBus, IconBusStop, IconConfetti, IconPlaneTilt, IconPolygon, IconToolsKitchen2 } from "@tabler/icons-react";
 
 const legend = [
   {
-    icon: <IconConfetti />,
+    icon: <IconConfetti className='map-icon' />,
     text: "Lugar del evento"
   },
   {
-    icon: <IconPlaneTilt />,
+    icon: <IconPolygon className='map-icon' style={{ outline: "none", padding: 0, boxSizing: "border-box" }} color="#E8BCCD" size="40" stroke={1.5} />,
+    text: "Alojamientos"
+  },
+  {
+    icon: <IconPlaneTilt className='map-icon' />,
     text: "Aeropuerto"
   },
   {
-    icon: <IconBusStop />,
+    icon: <IconBus className='map-icon' />,
+    text: "Estación de buses"
+  },
+  {
+    icon: <IconBusStop className='map-icon' />,
     text: "Parada de bus"
-  }
+  },
+  {
+    icon: <IconBuildingArch className='map-icon' />,
+    text: "Monumentos"
+  },
+  {
+    icon: <IconToolsKitchen2 className='map-icon' />,
+    text: "Tapas favoritas"
+  },
 ]
 
 const Map = () => {
@@ -37,21 +53,26 @@ const Map = () => {
 
       <Plat />
 
-      <Group
+      <Stack
         mt="xl"
         justify="center"
+        px="16px"
         gap="xl"
       >
-        {legend.map((item) => (
-          <Stack
+        {legend.map((item, i) => (
+          <Group
+            key={`legend-${i}`}
             align="center"
+            style={{
+              root: { width: "50%"}
+            }}
             gap="xs"
           >
             {item.icon}
-            <Text>{item.text}</Text>
-          </Stack>
+            <Text align="center" display="inline-block">{item.text}</Text>
+          </Group>
         ))}
-      </Group>
+      </Stack>
     </Container>
   );
 }
