@@ -146,11 +146,11 @@ nav {
 }
 
 .flower-separator {
-  opacity: .4;
+  opacity: .1;
   height: auto;
   margin: 0 auto;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 20%;
+  padding-right: 20%;
 }
 
 .btn-enter-website {

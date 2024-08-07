@@ -24,7 +24,7 @@ const Header = () => {
           <Text
             size="20px"
             pl="4px"
-          >I & P</Text>
+          >I <small style={{ fontSize: "16px"}}>&</small> P</Text>
           <small>02.11.24</small>
         </div>
         <DotLottieReact

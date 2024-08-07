@@ -1,41 +1,5 @@
 [
   {
-    "point": "Tapas - Gato del Cabo",
-    "latitude": 36.83875006577849, 
-    "longitude": -2.4616238825345125,
-    "icon": "tapas"
-  },
-  {
-    "point": "Tapas - Majareta La Taberna del Loco",
-    "latitude": 36.83850496462646, 
-    "longitude": -2.4647657280433384,
-    "icon": "tapas"
-  },
-  {
-    "point": "Tapas - La Consentida",
-    "latitude": 36.83873631634337,
-    "longitude": -2.4650321521146035,
-    "icon": "tapas"
-  },
-  {
-    "point": "Tapas - Patio de Vecinas",
-    "latitude": 36.8398248125327,
-    "longitude": -2.4659824918782784,
-    "icon": "tapas"
-  },
-  {
-    "point": "Tapas - Portocarrero",
-    "latitude": 36.83784167296413,
-    "longitude": -2.460193027276091,
-    "icon": "tapas"
-  },
-  {
-    "point": "Tapas - Don Paco",
-    "latitude": 36.835211578828265, 
-    "longitude": -2.4587734272807014,
-    "icon": "tapas"
-  },
-  {
     "point": "Alcazaba de Almería",
     "latitude": 36.840051329169505,
     "longitude": -2.4701323235785178,
@@ -60,7 +24,7 @@
     "icon": "monument"
   },
   {
-    "point": "Escuela de Arte de Almería",
+    "point": "Castillo de Guardias Viejas",
     "latitude": 36.700403403960046,
     "longitude": -2.8514909200958187,
     "icon": "monument"

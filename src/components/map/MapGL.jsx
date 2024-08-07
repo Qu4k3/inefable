@@ -54,12 +54,18 @@ const MapGL = () => {
     <Map
       mapboxAccessToken={TOKEN}
       touchAction="pan-y"
+      cooperativeGestures
       initialViewState={{
         longitude: -2.81361,
         latitude: 36.77271,
         zoom: 6.8,
         bearing: 0,
-        pitch: 0
+        pitch: 0,
+        locale: {
+          "ScrollZoomBlocker.CtrlMessage": "Usa ctrl + scroll para hacer zoom en el mapa",
+          "ScrollZoomBlocker.CmdMessage": "Usa ⌘ + scroll para hacer zoom en el mapa",
+          "TouchPanBlocker.Message": "Usa dos dedos para moverte por el mapa",
+        },
       }}
       id='map'
       style={{ width: "100%", height: 400 }}
@@ -80,15 +86,9 @@ const MapGL = () => {
           onClose={() => setPopupInfo(null)}
         >
           <div>
-            {popupInfo.city}, {popupInfo.state} |{' '}
-            <a
-              target="_new"
-              href={`http://en.wikipedia.org/w/index.php?title=Special:Search&search=${popupInfo.city}, ${popupInfo.state}`}
-            >
-              Wikipedia
-            </a>
+            {popupInfo.point}
           </div>
-          <img width="100%" src={popupInfo.image} />
+          {/*<img width="100%" src={popupInfo.image} />*/}
         </Popup>
       )}
 

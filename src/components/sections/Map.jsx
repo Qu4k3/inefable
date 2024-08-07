@@ -18,11 +18,7 @@ const legend = [
   {
     icon: <IconBuildingArch className='map-icon' />,
     text: "Monumentos"
-  },
-  {
-    icon: <IconToolsKitchen2 className='map-icon' />,
-    text: "Sitio de tapas favoritas"
-  },
+  }
 ]
 
 const Map = () => {
@@ -56,9 +52,10 @@ const Map = () => {
             key={`legend-${i}`}
             align="center"
             gap="xs"
+            wrap="nowrap"
           >
             {item.icon}
-            <Text align="center" display="inline-block">{item.text}</Text>
+            <Text>{item.text}</Text>
           </Group>
         ))}
       </SimpleGrid>
