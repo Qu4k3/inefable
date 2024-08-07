@@ -1,4 +1,3 @@
-'use client'
 import Album from "@/components/sections/Album";
 import DressCode from "@/components/sections/DressCode";
 import FAQ from "@/components/sections/FAQ";
