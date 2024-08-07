@@ -4,7 +4,14 @@ import Countdown from "../elements/Countdown";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { IconArrowRight } from "@tabler/icons-react";
 
-const Header = ({ hasVisited, handleVisitClick }) => {
+const Header = ({ hasVisited }) => {
+  const handleVisitClick = () => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('hasVisited', 'true');
+      localStorage.setItem('playSong', 'true');
+    }
+  };
+
   return (
     <Container
       id="top"
@@ -40,6 +47,7 @@ const Header = ({ hasVisited, handleVisitClick }) => {
             autoResizeCanvas={true}
           />
           : <Button
+            id="btn-enter-website"
             variant="filled"
             color="#E8BCCD"
             radius="xl"

@@ -5,7 +5,7 @@ import FAQ from "@/components/sections/FAQ";
 import Footer from "@/components/sections/Footer";
 import CheckForm from "@/components/forms/CheckForm";
 import Hashtag from "@/components/sections/Hashtag";
-//import Header from "@/components/sections/Header";
+import Header from "@/components/sections/Header";
 import Inefable from "@/components/sections/Inefable";
 import Map from "@/components/sections/Map";
 import Playlist from "@/components/sections/Playlist";
@@ -14,13 +14,11 @@ import Menu from "@/components/elements/Menu";
 import Audio from "@/components/elements/Audio";
 import FlowerSeparator from "@/components/elements/FlowerSeparator";
 import { useEffect, useState } from "react";
-import dynamic from 'next/dynamic';
-
-// Import dynamically with no SSR
-const Header = dynamic(() => import('@/components/sections/Header'), { ssr: false });
 
 export default function Home() {
   const [pageVisited, setPageVisited] = useState(false);
+
+  // ADD an event listener to a button with id #btn-enter-website and triger if clicked
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -28,23 +26,31 @@ export default function Home() {
       if (hasVisited) {
         setPageVisited(true);
       }
+      
+      const handleEnterWebsite = () => {
+        localStorage.setItem('hasVisited', 'true');
+        setPageVisited(true);
+      };
+
+      const button = document.getElementById('btn-enter-website');
+      if (button) {
+        button.addEventListener('click', handleEnterWebsite);
+      }
+
+      // Cleanup event listener on unmount
+      return () => {
+        if (button) {
+          button.removeEventListener('click', handleEnterWebsite);
+        }
+      };
     }
   }, []);
-
-  const handleVisitClick = () => {
-    setPageVisited(true);
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('hasVisited', 'true');
-      localStorage.setItem('playSong', 'true');
-    }
-  };
 
   return (
     <main className="home">
       {!pageVisited ? (
         <Header
           hasVisited={pageVisited}
-          handleVisitClick={handleVisitClick}
         />
       ) : (
         <>
