@@ -7,18 +7,27 @@ const Audio = () => {
   const [isSongPlaying, setIsSongPlaying] = useState(false);
   const audioRef = useRef(null);
 
+  useEffect(() => {
+    const playSong = localStorage.getItem('playSong');
+    if (playSong) {
+      setIsSongPlaying(playSong);
+    }
+  }, []);
+
   const handleAudioChange = () => {
     if (!audioRef.current) return
 
     if (isSongPlaying) {
       audioRef.current.pause();
+      localStorage.setItem('playSong', 'false');
     } else {
       audioRef.current.play();
+      localStorage.setItem('playSong', 'true');
     }
     setIsSongPlaying(!isSongPlaying);
   }
 
-  const handleScroll = () => {
+  /*const handleScroll = () => {
     if (!isSongPlaying && audioRef.current) {
       audioRef.current.play().then(() => {
         setIsSongPlaying(true); // Ensure audio plays only once
@@ -34,7 +43,7 @@ const Audio = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, []);*/
 
   return (
     <Affix position={{ top: 40, right: 20 }}>

@@ -1,5 +1,5 @@
-import { Container, Group, Stack, Text, Title } from "@mantine/core";
-import Plat from "../map/Plat";
+import MapGL from "../map/MapGL";
+import { Container, Group, SimpleGrid, Text, Title } from "@mantine/core";
 import { IconBuildingArch, IconBus, IconBusStop, IconConfetti, IconPlaneTilt, IconPolygon, IconToolsKitchen2 } from "@tabler/icons-react";
 
 const legend = [
@@ -29,7 +29,7 @@ const legend = [
   },
   {
     icon: <IconToolsKitchen2 className='map-icon' />,
-    text: "Tapas favoritas"
+    text: "Sitio de tapas favoritas"
   },
 ]
 
@@ -37,7 +37,7 @@ const Map = () => {
   return (
     <Container
       id="mapa"
-      py="40px"
+      py="100px"
       px={0}
       fluid
     >
@@ -51,13 +51,13 @@ const Map = () => {
         Alojamientos * Transporte * Puntos de interés
       </Title>
 
-      <Plat />
+      <MapGL />
 
-      <Stack
+      <SimpleGrid 
         mt="xl"
-        justify="center"
+        cols={2}
+        spacing="xl"
         px="16px"
-        gap="xl"
       >
         {legend.map((item, i) => (
           <Group
@@ -72,7 +72,7 @@ const Map = () => {
             <Text align="center" display="inline-block">{item.text}</Text>
           </Group>
         ))}
-      </Stack>
+      </SimpleGrid>
     </Container>
   );
 }

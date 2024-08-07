@@ -5,7 +5,7 @@ const Inefable = () => {
   return (
     <Container
       id="inefable"
-      py="40px"
+      py="100px"
       fluid
     >
       <Title

@@ -47,7 +47,7 @@ const FAQ = () => {
   return (
     <Container
       id="preguntas-frecuentes"
-      py="40px"
+      py="100px"
       fluid
     >
       <Title

@@ -5,7 +5,7 @@ const Playlist = () => {
   return (
     <Container
       id="playlist"
-      py="40px"
+      py="100px"
       fluid
     >
       <Flex

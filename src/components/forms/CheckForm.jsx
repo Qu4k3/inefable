@@ -41,7 +41,7 @@ export function CheckForm() {
   return (
     <Container
       id="confirmacion"
-      py="40px"
+      py="100px"
       fluid
     >
       <Flex

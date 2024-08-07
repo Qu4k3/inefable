@@ -19,7 +19,7 @@ const DressCode = () => {
   return (
     <Container
       id="dress-code"
-      py="40px"
+      py="100px"
       fluid
     >
       <Flex

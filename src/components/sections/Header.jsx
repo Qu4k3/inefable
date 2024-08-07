@@ -1,16 +1,20 @@
 'use client'
-import { Container, Flex, Text } from "@mantine/core";
+import { Button, Container, Flex, Text } from "@mantine/core";
 import Countdown from "../elements/Countdown";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { IconArrowRight } from "@tabler/icons-react";
 
-const Header = () => {
+const Header = ({ hasVisited, handleVisitClick }) => {
   return (
     <Container
       id="top"
-      py="40px"
+      py="100px"
       pt="80px"
       fluid
       className="header"
+      styles={{
+        root: { overflowY: !hasVisited ? 'scroll' : 'visible' }
+      }}
     >
       <Flex
         direction="column"
@@ -27,13 +31,25 @@ const Header = () => {
           >I & P</Text>
           <small>02.11.24</small>
         </div>
-        <DotLottieReact
-          className="animated-svg scroll-down"
-          src="/lottie/scroll-finger.lottie"
-          loop
-          autoplay
-          autoResizeCanvas={true}
-        />
+        {hasVisited ?
+          <DotLottieReact
+            className="animated-svg scroll-down"
+            src="/lottie/scroll-finger.lottie"
+            loop
+            autoplay
+            autoResizeCanvas={true}
+          />
+          : <Button
+            variant="filled"
+            color="#E8BCCD"
+            radius="xl"
+            rightSection={<IconArrowRight size={14} />}
+            className="btn-enter-website wiggle"
+            onClick={handleVisitClick}
+          >
+            Entrar
+          </Button>
+        }
       </Flex>
     </Container>
   );

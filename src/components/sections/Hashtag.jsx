@@ -6,7 +6,7 @@ const Hashtag = () => {
   return (
     <Container
       id="hashtag"
-      py="40px"
+      py="100px"
       fluid
     >
       <Flex

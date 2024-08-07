@@ -26,7 +26,7 @@ const iconMap = {
   tapas: <IconToolsKitchen2 className='map-icon' />
 };
 
-const Plat = () => {
+const MapGL = () => {
   const [popupInfo, setPopupInfo] = useState(null);
 
   const pins = useMemo(
@@ -53,6 +53,7 @@ const Plat = () => {
   return (
     <Map
       mapboxAccessToken={TOKEN}
+      touchAction="pan-y"
       initialViewState={{
         longitude: -2.81361,
         latitude: 36.77271,
@@ -138,4 +139,4 @@ const Plat = () => {
   );
 }
 
-export default Plat;
+export default MapGL;

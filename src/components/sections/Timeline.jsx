@@ -98,7 +98,7 @@ const Schedule = () => {
   return (
     <Container
       id="programacion"
-      py="40px"
+      py="100px"
       fluid
     >
       <Title

@@ -5,7 +5,7 @@ const Album = () => {
   return (
     <Container
       id="album"
-      py="40px"
+      py="100px"
       fluid
     >
       <Flex
@@ -19,7 +19,7 @@ const Album = () => {
           ta="center"
           pos="relative"
         >
-          Album
+          Álbum
           <DotLottieReact
             className="animated-svg behind-title behind-right"
             src="/lottie/album.lottie"
@@ -30,8 +30,8 @@ const Album = () => {
         </Title>
 
         <div>
-          <Text ta="center" mb="sm">El día de la boda toma muchas fotos y déjanos un bonito y divertido recuerdo.</Text>
-          <Text fw="bold" ta="center">Puedes compartir todas tus fotos en este album compartido.</Text>
+          <Text ta="center" mb="sm">El día de la boda, captura muchos momentos en fotos y vídeos para dejarnos un recuerdo bonito y divertido.</Text>
+          <Text fw="bold" ta="center">Puedes compartir todas tus fotos/vídeos en este álbum compartido.</Text>
         </div>
 
         <a
