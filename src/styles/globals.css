@@ -147,9 +147,10 @@ nav {
 
 .flower-separator {
   opacity: .4;
-  max-width: 80%;
   height: auto;
   margin: 0 auto;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .btn-enter-website {

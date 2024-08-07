@@ -5,7 +5,7 @@ const timelineEventsGPT = [
   {
     "time": "17h",
     "event": "Ceremonia",
-    "description": "¡El gran momento ha llegado! En esta ceremonia tan especial, los novios intercambiarán votos llenos de amor y compromiso.",
+    "description": "¡El gran momento ha llegado! Nos intercambiaremos votos llenos de amor y compromiso.",
     "icon": <IconCirclesRelation />,
     "lineVariant": "solid"
   },
@@ -67,28 +67,28 @@ const timelineEvents = [
   {
     "time": "17h",
     "event": "Ceremonia",
-    "description": "¡El gran momento ha llegado! En esta ceremonia tan especial, nos intercambiaremos votos llenos de amor y compromiso.",
+    "description": "¡El gran momento ha llegado!<br />Nos intercambiaremos votos llenos de amor y compromiso.",
     "icon": <IconCirclesRelation />,
     "lineVariant": "solid"
   },
   {
     "time": "18h",
     "event": "Cóctel",
-    "description": "Hora de brindar y picar algo rico. Charlen, rían y disfruten mientras nos sacamos miles de fotos.",
+    "description": "¡Hora de relajarse y celebrar!<br />Disfruta de los aperitivos mientras compartes risas y brindis con amigos y familiares.",
     "icon": <IconGlassCocktail />,
     "lineVariant": "solid"
   },
   {
     "time": "20h30",
     "event": "Cena",
-    "description": "A reponer energías con un festín digno de reyes. Brindis, risas y quizás alguna lagrimita de emoción.",
+    "description": "¡A comer!<br />Repon energías con un festín lleno de platos exquisitos.",
     "icon": <IconToolsKitchen2 />,
     "lineVariant": "solid"
   },
   {
     "time": "23h",
     "event": "Fiesta",
-    "description": "¡Que empiece la diversión! A mover el esqueleto hasta que el cuerpo aguante. ¡La noche es joven!",
+    "description": "¡Que empiece la diversión, la noche es joven!",
     "icon": <IconConfetti />,
     "lineVariant": "solid"
   }
@@ -122,7 +122,7 @@ const Schedule = () => {
         {timelineEvents.map((event) => (
           <Timeline.Item key={event.time} bullet={event.icon} lineVariant={event.lineVariant} title={event.time}>
             <Text size="md">{event.event}</Text>
-            <Text c="dimmed" size="md" mt={4}>{event.description}</Text>
+            <Text c="dimmed" size="md" mt={4} dangerouslySetInnerHTML={{__html: event.description}}></Text>
           </Timeline.Item>
         ))}
 

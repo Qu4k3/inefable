@@ -66,44 +66,6 @@
     "icon": "monument"
   },
   {
-    "point": "Parada Autobús L30",
-    "latitude": 36.848338932635365,
-    "longitude": -2.371216813109994,
-    "icon": "busStop"
-  },
-  {
-    "point": "Parada Autobús L30 - Cerca Estación Autobuses",
-    "latitude": 36.83779239517121,
-    "longitude": -2.456117349529615,
-    "icon": "busStop"
-  },
-  {
-    "point": "Parada Autobús 51 - Cerca Paraisso al Mar",
-    "latitude": 36.7073668650273,
-    "longitude": -2.8445793213677852,
-    "icon": "busStop",
-    "moovit": "https://moovitapp.com/almeria-5237/poi/Carretera%20Guardias%20Viejas,%2018/Estaci%C3%B3n%20De%20Almer%C3%ADa/es?tsid=46376919&ref=10&poiType=Stop&customerId=4908&af_sub8=%2Findex%2Fes%2Ftransporte_p%25C3%25BAblico-Guardias_Viejas_Ba%25C3%25B1os-Almeria-stop_46376919-5237&af_sub9=map&fll=36.834723_-2.455287&tll=36.706992_-2.844503&t=1"
-  },
-  {
-    "point": "Estación de Autobuses de Almería",
-    "latitude": 36.835263585686924,
-    "longitude": -2.455200050751569,
-    "icon": "busStation"
-  },
-  {
-    "point": "Estación de Autobuses de El Ejido",
-    "latitude": 36.77307522626094,
-    "longitude": -2.8081256349465025,
-    "icon": "busStation"
-  },
-  {
-    "point": "Estación de Autobuses de El Ejido",
-    "latitude": 36.77307522626094,
-    "longitude": -2.8081256349465025,
-    "icon": "busStation",
-    "moovit": "https://moovitapp.com/almeria-5237/poi/Almerimar/Estaci%C3%B3n%20De%20Almer%C3%ADa/es?tsid=46376919&ref=10&poiType=Stop&customerId=4908&af_sub8=%2Findex%2Fes%2Ftransporte_p%25C3%25BAblico-Guardias_Viejas_Ba%25C3%25B1os-Almeria-stop_46376919-5237&af_sub9=map&fll=36.834723_-2.455287&tll=36.707867_-2.807456&t=1"
-  },  
-  {
     "point": "Aeropuerto de Almería",
     "latitude": 36.84488417574279,
     "longitude": -2.370430179034104,

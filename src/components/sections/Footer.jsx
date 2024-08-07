@@ -2,7 +2,11 @@ import { Container, Text, Title } from "@mantine/core";
 
 const Footer = () => {
   return (
-    <Container ta="center">
+    <Container
+      ta="center"
+      py="100px"
+      fluid
+    >
       <Title
         order={2}
         fw={400}
@@ -13,10 +17,10 @@ const Footer = () => {
         pl="6px"
       >
         I <small>&</small> P
-      </Title>      
+      </Title>
 
       <Text
-      size="sm"
+        size="sm"
       >02.11.24</Text>
 
     </Container>

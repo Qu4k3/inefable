@@ -30,7 +30,7 @@ const Hashtag = () => {
           />
         </Title>
 
-        <Text ta="center">Comparte tus fotos y vídeos de este hermoso día con nuestro #hashtag</Text>
+        <Text ta="center">Comparte tus fotos y vídeos de este bonito día con nuestro #hashtag</Text>
 
         <a
           target="_blank"

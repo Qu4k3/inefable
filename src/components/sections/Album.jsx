@@ -30,8 +30,8 @@ const Album = () => {
         </Title>
 
         <div>
-          <Text ta="center" mb="sm">El día de la boda, captura muchos momentos en fotos y vídeos para dejarnos un recuerdo bonito y divertido.</Text>
-          <Text fw="bold" ta="center">Puedes compartir todas tus fotos/vídeos en este álbum compartido.</Text>
+          <Text ta="center" mb="sm">El día de la boda, si capturas momentos en foto y vídeo dejanos un recuerdo bonito y divertido.</Text>
+          <Text fw="bold" ta="center">Puedes subir todas tus fotos/vídeos en este álbum compartido.</Text>
         </div>
 
         <a

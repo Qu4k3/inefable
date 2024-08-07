@@ -9,17 +9,17 @@ const faqs = [
   {
     value: "arrival-time",
     question: "¿A qué hora debo llegar?",
-    answer: "Recomendamos llegar al menos 15-30 minutos antes de la ceremonia para que puedas encontrar tu asiento y estar listo para el inicio puntual del evento."
+    answer: "Recomendamos llegar al menos 15-30 minutos antes de la ceremonia y estar listo para el inicio puntual del evento."
   },
   {
     value: "accommodation",
     question: "¿Hay opciones de alojamiento cerca del lugar de la boda?",
-    answer: "Sí, hay disponibles bloques de habitaciones en [nombre del hotel], que se encuentra cerca del lugar de la boda. Menciona nuestro evento al hacer la reserva para obtener una tarifa especial."
+    answer: "Sí, hay disponibles hoteles y apartamentos que se encuentra cerca del lugar de la boda. Podéis consultar el mapa para ver las zonas recomendadas."
   },
   {
     value: 'food',
     question: '¿Habrá opciones de comida para personas con dietas especiales?',
-    answer: 'Sí, por favor infórmanos de cualquier restricción alimentaria cuando confirmes tu asistencia a cualquiera de nuestros 2 teléfonos para que podamos acomodar tus necesidades.',
+    answer: 'Sí, por favor infórmanos de cualquier restricción alimentaria cuando confirmes tu asistencia a cualquiera de nuestros dos teléfonos para que podamos acomodar tus necesidades.',
   },
   {
     value: "transport",

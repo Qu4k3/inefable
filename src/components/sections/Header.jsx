@@ -2,9 +2,8 @@
 import { Button, Container, Flex, Text } from "@mantine/core";
 import Countdown from "../elements/Countdown";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import { IconArrowRight } from "@tabler/icons-react";
 
-const Header = ({ hasVisited, handleVisitClick }) => {
+const Header = () => {
   return (
     <Container
       id="top"
@@ -12,9 +11,6 @@ const Header = ({ hasVisited, handleVisitClick }) => {
       pt="80px"
       fluid
       className="header"
-      styles={{
-        root: { overflowY: !hasVisited ? 'scroll' : 'visible' }
-      }}
     >
       <Flex
         direction="column"
@@ -31,25 +27,13 @@ const Header = ({ hasVisited, handleVisitClick }) => {
           >I & P</Text>
           <small>02.11.24</small>
         </div>
-        {hasVisited ?
-          <DotLottieReact
-            className="animated-svg scroll-down"
-            src="/lottie/scroll-finger.lottie"
-            loop
-            autoplay
-            autoResizeCanvas={true}
-          />
-          : <Button
-            variant="filled"
-            color="#E8BCCD"
-            radius="xl"
-            rightSection={<IconArrowRight size={14} />}
-            className="btn-enter-website wiggle"
-            onClick={handleVisitClick}
-          >
-            Entrar
-          </Button>
-        }
+        <DotLottieReact
+          className="animated-svg scroll-down"
+          src="/lottie/scroll-finger.lottie"
+          loop
+          autoplay
+          autoResizeCanvas={true}
+        />
       </Flex>
     </Container>
   );

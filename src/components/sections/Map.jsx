@@ -9,19 +9,11 @@ const legend = [
   },
   {
     icon: <IconPolygon className='map-icon' style={{ outline: "none", padding: 0, boxSizing: "border-box" }} color="#E8BCCD" size="40" stroke={1.5} />,
-    text: "Alojamientos"
+    text: "Dónde alojarse"
   },
   {
     icon: <IconPlaneTilt className='map-icon' />,
     text: "Aeropuerto"
-  },
-  {
-    icon: <IconBus className='map-icon' />,
-    text: "Estación de buses"
-  },
-  {
-    icon: <IconBusStop className='map-icon' />,
-    text: "Parada de bus"
   },
   {
     icon: <IconBuildingArch className='map-icon' />,
@@ -36,7 +28,7 @@ const legend = [
 const Map = () => {
   return (
     <Container
-      id="mapa"
+      id="puntos-relevantes"
       py="100px"
       px={0}
       fluid
@@ -48,7 +40,7 @@ const Map = () => {
         mb="40px"
         px="16px"
       >
-        Alojamientos * Transporte * Puntos de interés
+        Puntos relevantes
       </Title>
 
       <MapGL />
@@ -63,9 +55,6 @@ const Map = () => {
           <Group
             key={`legend-${i}`}
             align="center"
-            style={{
-              root: { width: "50%"}
-            }}
             gap="xs"
           >
             {item.icon}
