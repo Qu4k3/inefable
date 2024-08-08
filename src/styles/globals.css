@@ -149,8 +149,15 @@ nav {
   opacity: .1;
   height: auto;
   margin: 0 auto;
-  padding-left: 20%;
-  padding-right: 20%;
+  display: block;
+  position: relative;
+
+  & > img {
+    padding-left: 20%;
+    padding-right: 20%;
+    width: 100%;
+    height: auto;
+  }
 }
 
 .btn-enter-website {
@@ -580,6 +587,32 @@ h1 {
   .sound-active {
     animation: sound-active 3s ease-in-out infinite alternate;
   }
+}
+
+
+.mapboxgl-popup-content {
+  padding: 10px !important;
+  border-radius: 1rem !important;
+
+  & figure img {
+    border-radius: calc(1rem - 10px);
+  }
+
+  & figure figcaption {
+    font-family: var(--font-lora) !important;
+    text-align: center;
+  }
+}
+
+.mapboxgl-popup-close-button {
+  font-family: var(--font-lora) !important;
+  font-size: 24px;
+  padding: 10px 14px;
+  background-color: #fff !important;
+  border-bottom-left-radius: 1rem !important;
+  border-top-right-radius: 1rem !important;
+  /*top: 10px !important;
+  right: 10px !important;*/
 }
 
 .wiggle {

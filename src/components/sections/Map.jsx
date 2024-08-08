@@ -28,6 +28,7 @@ const Map = () => {
       py="100px"
       px={0}
       fluid
+      style={{ width: '100%' }}
     >
       <Title
         order={2}
@@ -46,6 +47,9 @@ const Map = () => {
         cols={2}
         spacing="xl"
         px="16px"
+        styles={{
+          root: { width: "100%" }
+        }}
       >
         {legend.map((item, i) => (
           <Group

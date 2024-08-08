@@ -56,8 +56,8 @@ const MapGL = () => {
       touchAction="pan-y"
       cooperativeGestures
       initialViewState={{
-        longitude: -2.81361,
-        latitude: 36.77271,
+        longitude: -3.0695500999165355,
+        latitude: 37.18181684907473,
         zoom: 6.8,
         bearing: 0,
         pitch: 0,
@@ -84,11 +84,12 @@ const MapGL = () => {
           longitude={Number(popupInfo.longitude)}
           latitude={Number(popupInfo.latitude)}
           onClose={() => setPopupInfo(null)}
+          style={{ padding: "15px 10px" }}
         >
-          <div>
-            {popupInfo.point}
-          </div>
-          {/*<img width="100%" src={popupInfo.image} />*/}
+          <figure>
+            <img width="100%" src={`/ubicaciones/${popupInfo.img}`} alt={popupInfo.point} />
+            <figcaption>{popupInfo.point}</figcaption>
+          </figure>
         </Popup>
       )}
 

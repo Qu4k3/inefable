@@ -1,9 +1,10 @@
 const FlowerSeparator = () => (
-    <img
-        src="/flower-separator.svg"
-        className="flower-separator"
-        alt="Separator"
-    />
+    <div className="flower-separator">
+        <img
+            src="/flower-separator.svg"
+            alt="Separator"
+        />
+    </div>
 );
 
 export default FlowerSeparator;

@@ -3,7 +3,6 @@ import Album from "@/components/sections/Album";
 import DressCode from "@/components/sections/DressCode";
 import FAQ from "@/components/sections/FAQ";
 import Footer from "@/components/sections/Footer";
-import CheckForm from "@/components/forms/CheckForm";
 import Hashtag from "@/components/sections/Hashtag";
 import Header from "@/components/sections/Header";
 import Inefable from "@/components/sections/Inefable";
@@ -13,6 +12,7 @@ import Schedule from "@/components/sections/Timeline";
 import Menu from "@/components/elements/Menu";
 import Audio from "@/components/elements/Audio";
 import FlowerSeparator from "@/components/elements/FlowerSeparator";
+import ConfirmAssistance from "@/components/sections/ConfirmAssistance";
 
 export default function Home() {
   return (
@@ -21,7 +21,7 @@ export default function Home() {
       <Header />
       <Schedule />
       <FlowerSeparator />
-      <CheckForm />
+      <ConfirmAssistance />
       <FlowerSeparator />
       <Inefable />
       <FlowerSeparator />

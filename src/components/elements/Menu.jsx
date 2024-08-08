@@ -30,7 +30,7 @@ const links = [
     text: "Playlist"
   },
   {
-    href: "#album",
+    href: "#recuerdos",
     text: "Álbum de Fotos"
   },
   {

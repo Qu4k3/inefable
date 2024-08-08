@@ -4,38 +4,62 @@ import { IconMusic, IconMusicOff } from "@tabler/icons-react";
 import { useEffect, useRef, useState } from "react";
 
 const Audio = () => {
-   const [isSongPlaying, setIsSongPlaying] = useState(false);
+  const [isSongPlaying, setIsSongPlaying] = useState(false);
   const audioRef = useRef(null);
 
   const handleAudioChange = () => {
-    if (!audioRef.current) return
+    const audioElement = audioRef.current;
+    if (!audioElement) return
 
     if (isSongPlaying) {
-      audioRef.current.pause();
-      localStorage.setItem('playSong', false)
+      audioElement.pause();
+      localStorage.setItem('playSong', 'false')
     } else {
-      audioRef.current.play();
-      localStorage.setItem('playSong', true)
+      audioElement.play();
+      localStorage.setItem('playSong', 'true')
     }
     setIsSongPlaying(!isSongPlaying);
   }
 
-  const handleScroll = () => {
-    if (!isSongPlaying && audioRef.current) {
-      audioRef.current.play().then(() => {
-        setIsSongPlaying(true); // Ensure audio plays only once
-        window.removeEventListener('scroll', handleScroll); // Remove the scroll event listener after playing
-      }).catch(error => {
-        console.error("Failed to play audio:", error);
-      });
-    }
-  };
-
   useEffect(() => {
-    const playSong = !localStorage.getItem('playSong');
-    if(playSong) { window.addEventListener('scroll', handleScroll); }
+    const playSong = localStorage.getItem('playSong');
+
+    // Define a handler to start the audio
+    const startAudioPlayback = () => {
+      if (!isSongPlaying && audioRef.current) {
+        audioRef.current.play().then(() => {
+          setIsSongPlaying(true);
+          localStorage.setItem('playSong', 'true');
+          removeEventListeners(); // Remove all event listeners after playing
+        }).catch(error => {
+          console.error("Failed to play audio:", error);
+        });
+      }
+    };
+
+    // Add event listeners
+    const addEventListeners = () => {
+      window.addEventListener('scroll', startAudioPlayback);
+      window.addEventListener('click', startAudioPlayback);
+      window.addEventListener('touchstart', startAudioPlayback);
+      window.addEventListener('keydown', startAudioPlayback);
+    };
+
+    // Remove event listeners
+    const removeEventListeners = () => {
+      window.removeEventListener('scroll', startAudioPlayback);
+      window.removeEventListener('click', startAudioPlayback);
+      window.removeEventListener('touchstart', startAudioPlayback);
+      window.removeEventListener('keydown', startAudioPlayback);
+    };
+
+    if (playSong !== "false") {
+      addEventListeners();
+    }
+
+    // Cleanup: Remove event listeners on component unmount
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      removeEventListeners();
     };
   }, []);
 
@@ -44,8 +68,9 @@ const Audio = () => {
       <audio
         ref={audioRef}
         src="/music/comptine-dun-autre-ete-lapres-midi.mp3"
-        autoPlay
         loop
+        autoPlay
+        onPlay={() => setIsSongPlaying(true)}
         preload="auto"
       ></audio>
 

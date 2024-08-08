@@ -4,7 +4,7 @@ import { Button, Container, Flex, Text, Title } from "@mantine/core";
 const Album = () => {
   return (
     <Container
-      id="album"
+      id="recuerdos"
       py="100px"
       fluid
     >
@@ -19,7 +19,7 @@ const Album = () => {
           ta="center"
           pos="relative"
         >
-          Álbum
+          Recuerdos
           <DotLottieReact
             className="animated-svg behind-title behind-right"
             src="/lottie/album.lottie"

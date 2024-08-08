@@ -14,7 +14,7 @@ const faqs = [
   {
     value: "accommodation",
     question: "¿Hay opciones de alojamiento cerca del lugar de la boda?",
-    answer: "Sí, hay disponibles hoteles y apartamentos que se encuentra cerca del lugar de la boda. Podéis consultar el mapa para ver las zonas recomendadas."
+    answer: "Sí, hay disponibles hoteles y apartamentos que se encuentran cerca del lugar de la boda. Podéis consultar el mapa de arriba para ver las zonas recomendadas."
   },
   {
     value: 'food',
