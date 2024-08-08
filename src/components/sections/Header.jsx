@@ -16,7 +16,7 @@ const Header = () => {
         direction="column"
         align="center"
         justify="center"
-        gap="40px"
+        gap="30px"
       >
         <Countdown className="countdown" finalDate="2024-11-02T17:00:00" />
 

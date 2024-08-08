@@ -135,7 +135,7 @@ nav {
   max-height: 40px;
   max-width: 40px;
   padding: 8px;
-  outline: 1px solid #000;
+  border: 2px solid #000;
   box-sizing: content-box;
 }
 
@@ -323,7 +323,7 @@ h1 {
 
 .countdown {
   font-size: 28px;
-  margin-top: 40px;
+  margin-top: 70px;
   font-weight: 300;
   position: relative;
 
