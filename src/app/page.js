@@ -1,42 +1,44 @@
 'use client'
-import Countdown from "@/components/Countdown";
-import { Notification } from "@mantine/core";
-import { IconHourglassLow } from "@tabler/icons-react";
+import Album from "@/components/sections/Album";
+import DressCode from "@/components/sections/DressCode";
+import FAQ from "@/components/sections/FAQ";
+import Footer from "@/components/sections/Footer";
+import Hashtag from "@/components/sections/Hashtag";
+import Header from "@/components/sections/Header";
+import Inefable from "@/components/sections/Inefable";
+import Map from "@/components/sections/Map";
+import Playlist from "@/components/sections/Playlist";
+import Schedule from "@/components/sections/Timeline";
+import Menu from "@/components/elements/Menu";
+import Audio from "@/components/elements/Audio";
+import FlowerSeparator from "@/components/elements/FlowerSeparator";
+import ConfirmAssistance from "@/components/sections/ConfirmAssistance";
 
 export default function Home() {
   return (
     <main className="home">
-      <div className="wrapper">
-        <Notification
-          icon={
-            <IconHourglassLow
-              style={{ width: '24px', height: '24px' }}
-            />
-          }
-          withCloseButton={false}
-          withBorder
-          color="#e1a9bf"
-          radius="md"
-          title="La web aún no está disponible"
-          styles={{
-            icon: { width: '40px', height: '40px' },
-          }}
-        >
-          ¡Vuelve en <Countdown
-            className="countdown-inline"
-            finalDate="2024-07-29T00:00:00"
-            finalText="breves..."
-          />!
-        </Notification>
-        <h1>inefable</h1>
-
-        <Countdown className="countdown" finalDate="2024-11-02T17:00:00" />
-
-        <div className="bottom">
-          <p>I & P</p>
-          <small>02.11.24</small>
-        </div>
-      </div>
+      <Audio />
+      <Header />
+      <Schedule />
+      <FlowerSeparator />
+      <ConfirmAssistance />
+      <FlowerSeparator />
+      <Inefable />
+      <FlowerSeparator />
+      <DressCode />
+      <FlowerSeparator />
+      <Map />
+      <FlowerSeparator />
+      <FAQ />
+      <FlowerSeparator />
+      <Playlist />
+      <FlowerSeparator />
+      <Album />
+      <FlowerSeparator />
+      <Hashtag />
+      <FlowerSeparator />
+      <Footer />
+      <Menu />
     </main>
   );
 }

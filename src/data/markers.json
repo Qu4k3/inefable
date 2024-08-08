@@ -1,0 +1,58 @@
+[
+  {
+    "point": "Alcazaba de Almería",
+    "img": "alcazaba-almeria.jpg",
+    "latitude": 36.840051329169505,
+    "longitude": -2.4701323235785178,
+    "icon": "monument"
+  },
+  {
+    "point": "Catedral de Almería",
+    "img": "catedral-almeria.jpg",
+    "latitude": 36.83821863370795,
+    "longitude": -2.467410156722086,
+    "icon": "monument"
+  },
+  {
+    "point": "Cable inglés",
+    "img": "cable-ingles.jpg",
+    "latitude": 36.8338121138255,
+    "longitude": -2.459493989714617,
+    "icon": "monument"
+  },
+  {
+    "point": "Escuela de Arte de Almería",
+    "img": "escuela-arte-almeria.jpg",
+    "latitude": 36.83704121663635, 
+    "longitude": -2.464330652784414,
+    "icon": "monument"
+  },
+  {
+    "point": "Castillo de Guardias Viejas",
+    "img": "castillo-guardias-viejas.jpg",
+    "latitude": 36.700403403960046,
+    "longitude": -2.8514909200958187,
+    "icon": "monument"
+  },
+  {
+    "point": "Aeropuerto de Almería",
+    "img": "aeropuerto-almeria.jpg",
+    "latitude": 36.84488417574279,
+    "longitude": -2.370430179034104,
+    "icon": "planeTilt"
+  },
+  {
+    "point": "Aeropuerto de Granada",
+    "img": "aeropuerto-granada.jpg",
+    "latitude": 37.1878654055616,
+    "longitude": -3.777956896029557,
+    "icon": "planeTilt"
+  },
+  {
+    "point": "Paraisso al mar",
+    "img": "paraisso-al-mar.jpg",
+    "latitude": 36.70715487668755,
+    "longitude": -2.8545620116902324,
+    "icon": "confetti"
+  }
+]
