@@ -80,11 +80,10 @@ const MapGL = () => {
       {popupInfo && (
         <Popup
           anchor="bottom"
-          offset={30}
+          offset={15}
           longitude={Number(popupInfo.longitude)}
           latitude={Number(popupInfo.latitude)}
           onClose={() => setPopupInfo(null)}
-          style={{ padding: "15px 10px" }}
         >
           <figure>
             <img width="100%" src={`/ubicaciones/${popupInfo.img}`} alt={popupInfo.point} />

@@ -8,16 +8,16 @@ const legend = [
     text: "Lugar del evento"
   },
   {
-    icon: <IconPolygon className='map-icon' style={{ outline: "none", padding: 0, boxSizing: "border-box" }} color="#E8BCCD" size="40" stroke={1.5} />,
-    text: "Dónde alojarse"
+    icon: <IconBuildingArch className='map-icon' />,
+    text: "Monumentos"
   },
   {
     icon: <IconPlaneTilt className='map-icon' />,
     text: "Aeropuerto"
   },
   {
-    icon: <IconBuildingArch className='map-icon' />,
-    text: "Monumentos"
+    icon: <IconPolygon className='map-icon' style={{ outline: "none", border: "none", padding: 0, boxSizing: "border-box" }} color="#E8BCCD" size="40" stroke={1.5} />,
+    text: "Dónde alojarse"
   }
 ]
 
