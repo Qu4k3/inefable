@@ -8,17 +8,18 @@ const Hashtag = () => {
       id="hashtag"
       py="100px"
       fluid
-    >
+      >
       <Flex
         direction="column"
         gap="40px"
         align="center"
-      >
+        >
         <Title
           order={2}
           fw={400}
           ta="center"
           pos="relative"
+          lh="h1"
         >
           #inefableday
           <DotLottieReact

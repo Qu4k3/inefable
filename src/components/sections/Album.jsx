@@ -18,6 +18,7 @@ const Album = () => {
           fw={400}
           ta="center"
           pos="relative"
+          lh="h1"
         >
           Recuerdos
           <DotLottieReact

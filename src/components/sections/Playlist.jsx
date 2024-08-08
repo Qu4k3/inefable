@@ -12,22 +12,23 @@ const Playlist = () => {
         direction="column"
         gap="40px"
         align="center"
-        pos="relative"
       >
         <Title
           order={2}
           fw={400}
           ta="center"
+          pos="relative"
+          lh="h1"
         >
           Playlist
-        </Title>
-        <DotLottieReact
+          <DotLottieReact
             className="animated-svg behind-title behind-left"
             src="/lottie/playlist.lottie"
             loop
             autoplay
             autoResizeCanvas={false}
           />
+        </Title>
 
         <div>
           <Text ta="center" mb="sm">¿Cuál es la canción imprescindible en la fiesta?</Text>
