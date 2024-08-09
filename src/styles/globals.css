@@ -613,6 +613,10 @@ h1 {
   border-top-right-radius: 1rem !important;
   /*top: 10px !important;
   right: 10px !important;*/
+
+  &:focus-visible {
+    outline: none;
+  }
 }
 
 .wiggle {

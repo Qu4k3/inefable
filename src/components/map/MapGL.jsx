@@ -80,7 +80,7 @@ const MapGL = () => {
       {popupInfo && (
         <Popup
           anchor="bottom"
-          offset={15}
+          offset={30}
           longitude={Number(popupInfo.longitude)}
           latitude={Number(popupInfo.latitude)}
           onClose={() => setPopupInfo(null)}
