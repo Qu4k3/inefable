@@ -9,7 +9,7 @@ const legend = [
   },
   {
     icon: <IconBuildingArch className='map-icon' />,
-    text: "Monumentos"
+    text: "Monumentos / Actividades"
   },
   {
     icon: <IconPlaneTilt className='map-icon' />,

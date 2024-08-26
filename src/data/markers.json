@@ -35,6 +35,20 @@
     "icon": "monument"
   },
   {
+    "point": "Puerto Deportivo Almerimar",
+    "img": "puerto-almerimar.jpg",
+    "latitude":   36.696125886330265,
+    "longitude": -2.793987600496455,
+    "icon": "monument"
+  },
+  {
+    "point": "Punta Entinas",
+    "img": "punta-entinas.jpg",
+    "latitude": 36.69227046678372,
+    "longitude": -2.6933873240095525,
+    "icon": "monument"
+  },
+  {
     "point": "Aeropuerto de Almería",
     "img": "aeropuerto-almeria.jpg",
     "latitude": 36.84488417574279,

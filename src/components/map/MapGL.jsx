@@ -7,7 +7,6 @@ import Map, {
   Source,
   Layer
 } from 'react-map-gl';
-import * as turf from '@turf/turf';
 
 import MARKERS from '../../data/markers.json';
 import GEOJSON from '../../data/geojson.json';
@@ -56,9 +55,9 @@ const MapGL = () => {
       touchAction="pan-y"
       cooperativeGestures
       initialViewState={{
-        longitude: -3.0695500999165355,
-        latitude: 37.18181684907473,
-        zoom: 6.8,
+        latitude: 36.774845084548524,
+        longitude: -2.6095559366150805,
+        zoom: 9,
         bearing: 0,
         pitch: 0,
         locale: {
