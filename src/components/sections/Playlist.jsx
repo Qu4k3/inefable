@@ -37,7 +37,7 @@ const Playlist = () => {
 
         <iframe
           className="spotify-iframe"
-          src="https://open.spotify.com/embed/playlist/0akNOKbTkbc0aHKvq1O6b0"
+          src="https://open.spotify.com/embed/playlist/0akNOKbTkbc0aHKvq1O6b0?theme=0"
           width="100%"
           height="152"
           frameBorder="0"
