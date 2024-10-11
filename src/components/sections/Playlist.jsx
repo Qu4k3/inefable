@@ -39,7 +39,7 @@ const Playlist = () => {
           className="spotify-iframe"
           src="https://open.spotify.com/embed/playlist/0akNOKbTkbc0aHKvq1O6b0?theme=0"
           width="100%"
-          height="152"
+          height="352"
           frameBorder="0"
           allowFullScreen=""
           allowtransparency="true"
@@ -49,7 +49,7 @@ const Playlist = () => {
 
         <a
           target="_blank"
-          href="https://open.spotify.com/playlist/0akNOKbTkbc0aHKvq1O6b0?si=oM2Ija5sSL2OY-YX6Kxg1g&pt=b86b2e61dc259fa124c2c8d69cc4db74&pi=6Yd5ZD1hSN2rf"
+          href="https://open.spotify.com/playlist/0akNOKbTkbc0aHKvq1O6b0?si=846225c243f4412d&pt=a7ad6c94aa26f6a3a40d75fe1319211a"
           rel="noopener noreferrer"
         >
           <Button
