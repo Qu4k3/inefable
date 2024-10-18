@@ -49,7 +49,7 @@ const Playlist = () => {
 
         <a
           target="_blank"
-          href="https://open.spotify.com/playlist/0akNOKbTkbc0aHKvq1O6b0?si=846225c243f4412d&pt=a7ad6c94aa26f6a3a40d75fe1319211a"
+          href="https://open.spotify.com/playlist/0akNOKbTkbc0aHKvq1O6b0?si=795e3f4ae9c248bd&pt=b0985e0ef68d79d2eb78042b5aeec990"
           rel="noopener noreferrer"
         >
           <Button
