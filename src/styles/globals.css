@@ -223,13 +223,50 @@ nav {
   justify-content: center;
   box-shadow: 0px 40px 40px #ffffff;
 
-  &::before {
+  &::after {
     content: '';
     position: absolute;
     background-image: url(../../public/count-a.png);
+    /*filter: brightness(0) invert(1);*/
     background-position: center center;
     background-repeat: no-repeat;
     background-size: 400px 400px;
+    /*z-index: -1;*/
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    animation: pulseOpacity 6s ease-in-out infinite alternate;
+  }
+
+  > div {
+    z-index: 10;
+
+    h2 {
+      
+      font-weight: 500;
+    }
+  }
+}
+
+/*.thank-you {
+  background-color: rgba(0, 0, 0, .85);
+  box-shadow: none;
+
+  & > div {
+    z-index: 10;
+    color: #ffffff;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    background-image: url(../../public/PXL_20241102_170441638.webp);
+    background-position: 70% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
     overflow: hidden;
     top: 0;
     left: 0;
@@ -237,9 +274,9 @@ nav {
     bottom: 0;
     opacity: .2;
     transform: translateY(0%);
-    animation: pulseOpacity 6s ease-in-out infinite alternate;
-  }
-}
+    /*animation: pulseOpacity 6s ease-in-out infinite alternate;*/
+  /*}
+}*/
 
 .scroll-down {
   position: absolute;
@@ -310,6 +347,9 @@ h1 {
 .bottom {
   font-weight: 200;
   font-size: 20px;
+  z-index: 10;
+  position: absolute;
+  bottom: 40px;
 }
 
 .bottom small {
